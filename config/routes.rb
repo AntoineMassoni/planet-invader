@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  root to: 'planets#index'
+  root to: 'planets#home'
   devise_for :users
   resources :planets do
     resources :bookings, only: [:index, :new, :create]
