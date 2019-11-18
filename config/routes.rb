@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root to: 'planets#index'
   devise_for :users
+  get 'pages/profile', to: 'pages#profile', as: :profile
   resources :planets do
     resources :bookings, only: [:index, :new, :create]
     resources :reviews, only: [:index, :new, :create]
