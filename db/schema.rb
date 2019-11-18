@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_18_145044) do
+ActiveRecord::Schema.define(version: 2019_11_18_153320) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -22,8 +22,17 @@ ActiveRecord::Schema.define(version: 2019_11_18_145044) do
     t.date "check_out"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "travelers"
     t.index ["planet_id"], name: "index_bookings_on_planet_id"
     t.index ["user_id"], name: "index_bookings_on_user_id"
+  end
+
+  create_table "planet_pictures", force: :cascade do |t|
+    t.string "photo"
+    t.bigint "planet_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["planet_id"], name: "index_planet_pictures_on_planet_id"
   end
 
   create_table "planets", force: :cascade do |t|
@@ -69,6 +78,7 @@ ActiveRecord::Schema.define(version: 2019_11_18_145044) do
 
   add_foreign_key "bookings", "planets"
   add_foreign_key "bookings", "users"
+  add_foreign_key "planet_pictures", "planets"
   add_foreign_key "planets", "users"
   add_foreign_key "reviews", "planets"
   add_foreign_key "reviews", "users"
