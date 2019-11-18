@@ -18,6 +18,12 @@ gem 'webpacker'
 # gem devise
 gem 'devise'
 
+# gem cloudinary
+gem 'cloudinary'
+
+# env
+gem 'dotenv-rails', groups: [:development, :test]
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
