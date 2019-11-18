@@ -1,26 +1,11 @@
 Rails.application.routes.draw do
-  get 'reviews/index'
-  get 'reviews/show'
-  get 'reviews/new'
-  get 'reviews/create'
-  get 'reviews/edit'
-  get 'reviews/update'
-  get 'reviews/destroy'
-  get 'bookings/index'
-  get 'bookings/show'
-  get 'bookings/new'
-  get 'bookings/create'
-  get 'bookings/edit'
-  get 'bookings/update'
-  get 'bookings/destroy'
-  get 'planets/index'
-  get 'planets/show'
-  get 'planets/new'
-  get 'planets/create'
-  get 'planets/edit'
-  get 'planets/update'
-  get 'planets/destroy'
-  devise_for :users
   root to: 'planets#index'
+  devise_for :users
+  resources :planets do
+    resources :bookings, only: [:index, :new, :create]
+    resources :reviews, only: [:index, :new, :create]
+  end
+  resources :bookings, only: [:destroy, :edit, :update]
+  resources :reviews, only: [:edit, :update, :destroy]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
