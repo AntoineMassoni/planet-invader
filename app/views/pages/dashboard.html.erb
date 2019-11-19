@@ -68,11 +68,12 @@
             <% current_user.bookings.each do |booking| %>
               <div class="bookings">
                 <div>Visiting : <%= booking.planet.name %></div>
-                <div>FROM : <%= booking.check_in %></div>
+                <div>FROM, : <%= booking.check_in %></div>
                 <div>TO : <%= booking.check_out %></div>
                 <div>WITH : <%= booking.travelers %> travelers</div>
               </div>
             <% end %>
+
         </div>
       </div>
 
