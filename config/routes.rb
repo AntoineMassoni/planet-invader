@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   root to: 'planets#home'
+  get '/search', to: 'planets#search', as: :search
   devise_for :users
   get "dashboard", to: "pages#dashboard"
   resources :planets do
