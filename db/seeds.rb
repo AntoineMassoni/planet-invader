@@ -68,6 +68,11 @@ Planet.create!(
   user: first_user
 )
 
+PlanetPicture.create!(
+  remote_photo_url: 'https://vignette.wikia.nocookie.net/starwars/images/6/66/Abafar-ASDitV.png/revision/latest?',
+  planet: Planet.last
+  )
+
 Planet.create!(
   name: 'Agamar',
   description: 'Small mineral planet located in a remote section of the galaxy, its surface is covered with a layer of white salt over its red-colored soil. In Leia, Princess of Alderaan it is the location of an early Rebel Alliance outpost. Leia and her remaining Resistance forces flee there in The Last Jedi, where they face off with the First Order.',
@@ -80,6 +85,11 @@ Planet.create!(
   # remote_photo_url: 'https://i.pinimg.com/originals/94/1b/a0/941ba0698464c77179782cbeda53ad6f.jpg',
   user: first_user
 )
+
+PlanetPicture.create!(
+  photo: 'https://i.pinimg.com/originals/94/1b/a0/941ba0698464c77179782cbeda53ad6f.jpg',
+  planet: Planet.last
+  )
 
 Planet.create!(
   name: 'Alderaan',
