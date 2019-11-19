@@ -54,5 +54,35 @@ body {
   width: 100%;
   margin-bottom: 20px;
   margin-top: -35px;
-  margin-left: -50px;
+  margin-left: -150px;
 }
+
+
+.popup-overlay .outer {
+    display: table;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.popup-overlay .middle {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+#exit .popup {
+    padding: 0;
+    width: 800px;
+    height: 430px;
+    margin: auto;
+    background-image: url(/img/exit/1.gif);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+
+
+
