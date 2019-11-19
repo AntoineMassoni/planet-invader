@@ -2,8 +2,8 @@
   <div class="container" id="midlle">
     <h1>Best rating planets</h1>
       <div class="row">
-        <% @planets.each do |planet| %>
-          <div class="col-xs-12 col-md-6">
+        <% @planets.first(3).each do |planet| %>
+          <div class="col-md-12">
             <%= render 'shared/card', planet: planet %>
           </div>
       <% end %>
@@ -13,8 +13,8 @@
   <div class="container" id="bottom">
     <h1>Recently added</h1>
       <div class="row">
-        <% @new_planets.each do |planet| %>
-          <div class="col-xs-12 col-md-6">
+        <% @new_planets.first(3).each do |planet| %>
+          <div class="col-md-12">
             <%= render 'shared/card', planet: planet %>
           </div>
       <% end %>
