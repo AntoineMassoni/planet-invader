@@ -4,43 +4,38 @@
       <h1>Check out the planets</h1>
     </div>
   </div>
-
-    <div class="row">
+  <div class="row">
     <% @planets.each do |planet| %>
-      <div class="col-4 col-sm-12 col-md-6 col-lg-4">
-        <div class="planet-card">
-          <div class="planet-card-image">
-         <img src ='<%= planet.planet_pictures.first.photo %>'>
-         </div>
-          <div class="planet-card-content">
-            <div class="planet-card-title">
-              <h4><%= planet.name %></h4>
-            </div>
-            <p>Coordinates <%= planet.stellar_coordinates %></p>
-            <div class="flex">
-              <div class="flex">
-                <p>capacity <%= planet.capacity %></p>
-              </div>
-              <div class="flex ml-3">
-                 <p>price <%= planet.price %></p>
-              </div>
-            </div>
+    <div class="col-4 col-sm-12 col-md-6 col-lg-4">
+      <div class="planet-card">
+        <div class="planet-card-image">
+          <img src ='<%= planet.planet_pictures.first.photo %>'>
+        </div>
+        <div class="planet-card-content">
+          <div class="planet-card-title">
+            <h4><%= planet.name %></h4>
           </div>
-          <div class="planet-card-actions">
-            <%= link_to 'More info', planet_path(planet), class: 'btn btn-success' %>
-            <%= link_to 'Edit', edit_planet_path(planet), class: 'btn btn-warning' %>
-            <%= link_to "Remove", planet_path(planet),
-                method: :delete,
-                data: { confirm: "really?" },
-                class: 'ml-3 btn btn-danger'
-            %>
+          <p>Coordinates <%= planet.stellar_coordinates %></p>
+          <div class="flex">
+            <div class="flex">
+              <p>capacity <%= planet.capacity %></p>
+            </div>
+            <div class="flex ml-3">
+              <p>price <%= planet.price %></p>
+            </div>
           </div>
         </div>
+        <div class="planet-card-actions">
+          <%= link_to 'More info', planet_path(planet), class: 'btn btn-success' %>
+          <%= link_to 'Edit', edit_planet_path(planet), class: 'btn btn-warning' %>
+          <%= link_to "Remove", planet_path(planet),
+          method: :delete,
+          data: { confirm: "really?" },
+          class: 'ml-3 btn btn-danger'
+          %>
+        </div>
       </div>
+    </div>
     <% end %>
   </div>
-
-
-
-
 </div>
