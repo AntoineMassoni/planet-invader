@@ -1,7 +1,23 @@
 <%= render 'shared/banner' %>
-  <div class="container">
-    link_to
+  <div class="container" id="midlle">
     <h2>Best ratings planets</h2>
+      <div class="row">
+        <% @rating_planets.each do |planet| %>
+          <div class="col-xs-12 col-md-6">
+            <%= render 'shared/card', planet: planet %>
+          </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="container">
     <h2>Recently added</h2>
+      <div class="row">
+        <% @new_planets.each do |planet| %>
+          <div class="col-xs-12 col-md-6">
+            <%= render 'shared/card', planet: planet %>
+          </div>
+      <% end %>
+    </div>
   </div>
 
