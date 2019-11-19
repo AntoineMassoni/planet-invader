@@ -31,8 +31,9 @@ class PlanetsController < ApplicationController
     redirect_to planet_path(@planet)
   end
 
-  def index
-    @planets = Planet.all
+  def show
+    @planet = Planet.find(params[:id])
+    @booking = Booking.new
   end
 
   def show; end

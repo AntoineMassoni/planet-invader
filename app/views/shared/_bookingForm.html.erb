@@ -1,0 +1,6 @@
+<%= simple_form_for [planet, booking] do |f| %>
+  <%= f.input :check_in, as: :string, input_html: { id: "check-in" } %>
+  <%= f.input :check_out, as: :string, input_html: { id: "check-out" } %>
+  <%= f.input :travelers %>
+  <%= f.submit "Book the planet" %>
+<% end %>
