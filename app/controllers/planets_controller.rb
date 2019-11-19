@@ -1,18 +1,44 @@
 class PlanetsController < ApplicationController
-  before_action :set_planet, only: [:show, :edit, :update, :destroy]
+  before_action :set_planet, only: %i[show edit update destroy]
+
   def home
-    @rating_planets = planets.all.order(rating: :desc)
-    @new_planets = planets.all.order(created_at: :desc)
+    @rating_planets = Planet.all.order(rating: :desc)
+    @new_planets = Planet.all.order(created_at: :desc)
+    @planets = Planet.all
+  end
+
+  def search
+    @planets = Planet.where(name: params[:search].capitalize)
+    if @planets == []
+      @planets = Planet.where(price: params[:search].capitalize)
+    elsif @planets == []
+      @planets = Planet.where(capacity: params[:search].capitalize)
+    elsif @planets == []
+      @planets = Planet.where(stellar_coordinates: params[:search].capitalize)
+    elsif @planets == []
+      @planets = Planet.where(activities: params[:search].capitalize)
+    elsif @planets == []
+      @planets = Planet.where(weather: params[:search].capitalize)
+    elsif @planets == []
+      @planets = Planet.where(local_population: params[:search].capitalize)
+    end
+
+    # raise
+
+    @planet = @planets.first
+
+    # redirect_to
+    redirect_to planet_path(@planet)
   end
 
   def index
     @planets = Planet.all
   end
 
-  def show
-  end
+  def show; end
 
   def new
+
     @planet =  Planet.new
   end
 
@@ -25,11 +51,10 @@ class PlanetsController < ApplicationController
     end
   end
 
-  def edit
-  end
+  def edit; end
 
   def update
-    @planet.update(planet_params)
+    @planet = planet.update(planet_params)
     redirect_to flat_path(@planet)
   end
 
