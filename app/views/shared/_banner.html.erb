@@ -1,12 +1,25 @@
 <div class="banner parallax">
   <div class="container">
     <h1>Planet Invaders</h1>
-    <div class="search_bar">
+    <div class="search_bar" placeholder="Try « Coruscant »">
         <%= form_tag search_path, method: :get do %>
           <%= text_field_tag :search %>
           <%= submit_tag 'Search', name: nil %>
         <% end %>
       </div>
-    <a href="#midlle" id="meteor"><i class="fas fa-meteor"></i></a>
+      <a href="#midlle">
+        <div class="center-con">
+          <div class="round d-flex justify-content-center">
+            <div id="cta">
+              <span class="arrow primera next "></span>
+              <span class="arrow segunda next "></span>
+             <!--  <i class="fas fa-sort-down"></i>
+              <i class="fas fa-sort-down"></i> -->
+            </div>
+          </div>
+        </div>
+     </a>
   </div>
 </div>
+
+

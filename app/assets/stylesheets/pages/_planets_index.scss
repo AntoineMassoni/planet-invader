@@ -1,5 +1,5 @@
 
-h1{
+h1 {
   color: #0E0000B7;
 }
 
@@ -21,27 +21,32 @@ h1{
   box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14), 0 1px 5px 0 rgba(0,0,0,0.12), 0 3px 1px -2px rgba(0,0,0,0.2);
 }
 
+.planet-card h4 {
+  color: #0582CA;
+}
+
 .planet-card-image img{
-  border-radius: 20px;
-  box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14);
+  border-radius: 5px 5px 0px 0px;
   height: 180px;
-  padding: 10px;
+  padding: 0px;
+  -o-object-fit: cover;
   object-fit: cover;
-  width: 80%;
+  width: 100%;
 }
 
 .planet-card-content {
   padding: 24px;
+  color: #2B2D42;
   background-color: #F8F9FA;
   font-weight: lighter;
 }
 
 .planet-card-actions {
-  border-radius: 10px;
+  border-radius: 5px;
   position: relative;
   background-color: inherit;
   border-top: 1px solid rgba(160,160,160,0.2);
-  padding: 16px 24px;
+  padding: 15px 20px;
 }
 
 .planet-card-title {
