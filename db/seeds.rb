@@ -71,6 +71,11 @@ Planet.create!(
   user: first_user
 )
 
+PlanetPicture.create!(
+  remote_photo_url: 'https://vignette.wikia.nocookie.net/starwars/images/6/66/Abafar-ASDitV.png/revision/latest?',
+  planet: Planet.last
+  )
+
 Planet.create!(
   name: 'Agamar',
   description: 'Small mineral planet located in a remote section of the galaxy, its surface is covered with a layer of white salt over its red-colored soil. In Leia, Princess of Alderaan it is the location of an early Rebel Alliance outpost. Leia and her remaining Resistance forces flee there in The Last Jedi, where they face off with the First Order.',
@@ -84,6 +89,11 @@ Planet.create!(
   user: first_user
 )
 
+PlanetPicture.create!(
+  remote_photo_url: 'https://i.pinimg.com/originals/94/1b/a0/941ba0698464c77179782cbeda53ad6f.jpg',
+  planet: Planet.last
+  )
+
 Planet.create!(
   name: 'Alderaan',
   description: 'Forests, mountains; home planet of Princess Leia and the House of Organa. Destroyed by the first Death Star as punishment for involvement in the Rebel Alliance and also as a demonstration of power.',
@@ -96,6 +106,12 @@ Planet.create!(
   # remote_photo_url: 'https://lumiere-a.akamaihd.net/v1/images/1-alderaan-bio-1_copy_d2ef86c5.jpeg?',
   user: second_user
 )
+
+PlanetPicture.create!(
+  remote_photo_url: 'https://lumiere-a.akamaihd.net/v1/images/1-alderaan-bio-1_copy_d2ef86c5.jpeg?',
+  planet: Planet.last
+  )
+
 Planet.create!(
   name: 'Coruscant',
   description: 'Cosmopolitan urban world consisting of one planet-wide city. Governmental center of the Galactic Republic and later the Galactic Empire.',
@@ -108,6 +124,11 @@ Planet.create!(
   # remote_photo_url: 'https://vignette.wikia.nocookie.net/starwars/images/1/16/Coruscant-EotE.jpg/revision/latest?',
   user: third_user
 )
+
+PlanetPicture.create!(
+  remote_photo_url: 'https://vignette.wikia.nocookie.net/starwars/images/1/16/Coruscant-EotE.jpg/revision/latest?',
+  planet: Planet.last
+  )
 
 Planet.create!(
   name: 'Dagobah',
@@ -122,6 +143,11 @@ Planet.create!(
   user: third_user
 )
 
+PlanetPicture.create!(
+  remote_photo_url: 'https://lumiere-a.akamaihd.net/v1/images/dagobah-2-retina_92180bd1.jpeg?',
+  planet: Planet.last
+  )
+
 Planet.create!(
   name: 'Endor',
   description: 'Forest moon that the second Death Star orbits. Inhabited by Ewoks. The location of the battle between the Rebel Alliance and the Empire leading to the destruction of the second Death Star.',
@@ -134,6 +160,11 @@ Planet.create!(
   # remote_photo_url: 'https://vignette.wikia.nocookie.net/starwars/images/1/1d/Endor_BF2.png/revision/latest?',
   user: fourth_user
 )
+
+PlanetPicture.create!(
+  remote_photo_url: 'https://vignette.wikia.nocookie.net/starwars/images/1/1d/Endor_BF2.png/revision/latest?',
+  planet: Planet.last
+  )
 
 Planet.create!(
   name: 'Hoth',
@@ -148,6 +179,11 @@ Planet.create!(
   user: fourth_user
 )
 
+PlanetPicture.create!(
+  remote_photo_url: 'https://vignette.wikia.nocookie.net/starwars/images/8/81/Hoth_AoRCR.png/revision/latest?',
+  planet: Planet.last
+  )
+
 Planet.create!(
   name: 'Jakku',
   description: 'Desert planet. Site of a "graveyard" of ships damaged during the Battle of Jakku, the final battle between the New Republic and the Galactic Empire.',
@@ -160,6 +196,11 @@ Planet.create!(
   # remote_photo_url: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5087ce2d-012d-4a01-be04-27c944009d25/d9qehex-3f6c919e-be89-48b5-893d-4023d64d2f5f.png/v1/fill/w_1024,h_576,q_80,strp/jakku_planet_postprod_by_sambishop10_d9qehex-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvNTA4N2NlMmQtMDEyZC00YTAxLWJlMDQtMjdjOTQ0MDA5ZDI1XC9kOXFlaGV4LTNmNmM5MTllLWJlODktNDhiNS04OTNkLTQwMjNkNjRkMmY1Zi5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.F0dSXwZP0TYeC1PC7PfPBA-9uusiLHijdacuLfYGcIU',
   user: fifth_user
 )
+
+PlanetPicture.create!(
+  remote_photo_url: 'https://vignette.wikia.nocookie.net/fr.starwars/images/f/f4/Jakku_-_full_-_SW_Poe_Dameron_Flight_Log_.png/revision/latest?cb=20190223074011',
+  planet: Planet.last
+  )
 
 Planet.create!(
   name: 'Kashyyyk',
@@ -174,6 +215,11 @@ Planet.create!(
   user: first_user
 )
 
+PlanetPicture.create!(
+  remote_photo_url: 'https://vignette.wikia.nocookie.net/foceunleashed/images/0/01/Kashyyyk.jpg/revision/latest?',
+  planet: Planet.last
+  )
+
 Planet.create!(
   name: 'Mandalore',
   description: 'Formerly habitable planet and the subject of legends due to its history of Mandalorian warriors.',
@@ -187,6 +233,11 @@ Planet.create!(
   user: third_user
 )
 
+PlanetPicture.create!(
+  remote_photo_url: 'https://i.pinimg.com/originals/9c/9d/b2/9c9db27ec0e9850eb0f0590653e5ef93.png',
+  planet: Planet.last
+  )
+
 Planet.create!(
   name: 'Tatooine',
   description: 'Desert planet and childhood home of Anakin Skywalker and Luke Skywalker.',
@@ -199,6 +250,11 @@ Planet.create!(
   # remote_photo_url: 'https://i.ytimg.com/vi/a1AZHMg-J5Q/maxresdefault.jpg',
   user: fifth_user
 )
+
+PlanetPicture.create!(
+  remote_photo_url: 'https://i.ytimg.com/vi/a1AZHMg-J5Q/maxresdefault.jpg',
+  planet: Planet.last
+  )
 
 
 puts 'done!'
