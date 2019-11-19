@@ -1,0 +1,87 @@
+.card-product {
+  overflow: hidden;
+  height: 200px;
+  background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  border-radius: 100px;
+  margin-top: 10px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 200px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.card-product h2 {
+  font-size: 16px;
+  margin: 0;
+  color: black;
+  flex-direction: bottom;
+}
+
+.card-product h3 {
+  font-size: 24px;
+  font-weight: bold
+}
+
+
+.card-product p {
+  font-size: 12px;
+  line-height: 1.4;
+  opacity: .7;
+  margin-bottom: 0;
+  margin-top: 8px;
+
+}
+
+.card-product .card-product-infos {
+  padding: 16px;
+}
+
+.dashboard-card h2{
+  color: black;
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-align: center
+}
+
+.dashboard-card {
+  flex-grow: 1;
+  // background-color: blue;
+  border-radius: 10px;
+  margin-right: 5px
+
+}
+
+.dashboard-card h1{
+  color: black;
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.profile-container {
+  margin: 0 auto;
+  width: 95%;
+  justify-content: space-between
+}
+
+.profile-container h1 {
+  font-size: 60px;
+  color: black
+}
+
+.profile-card {
+  // border: solid 1px black
+}
+
+.profile-card h2{
+  color: black;
+  font-size: 36px;
+  margin-bottom: 10px;
+  text-align: center
+}
