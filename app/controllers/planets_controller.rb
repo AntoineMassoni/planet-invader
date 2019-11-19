@@ -38,13 +38,14 @@ class PlanetsController < ApplicationController
   def show; end
 
   def new
-    @planet = Planet.new
+
+    @planet =  Planet.new
   end
 
   def create
     @planet = Planet.new(planet_params)
     if @planet.save
-      redirect_to planet_path(@planet)
+      redirect_to planets_path
     else
       render :new
     end
@@ -59,18 +60,24 @@ class PlanetsController < ApplicationController
 
   def destroy
     @planet.destroy
-    redirect_to planet_path(@planet)
+    redirect_to planets_path
   end
 
   private
 
-  def planet_params
-    params.require(:planet).permit(:name, :price, :capacity, :description,
-                                   :stellar_coordinates, :activities,
-                                   :weather, :local_population)
-  end
-
   def set_planet
     @planet = Planet.find(params[:id])
+  end
+
+  def planet_params
+    params.require(:planet).permit(:name,
+                                   :description,
+                                   :price,
+                                   :capacity,
+                                   :stellar_coordinates,
+                                   :activities,
+                                   :weather,
+                                   :local_population,
+                                   :user)
   end
 end
