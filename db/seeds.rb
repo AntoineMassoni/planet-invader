@@ -6,7 +6,6 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Planet.destroy_all
 User.destroy_all
 
 require 'faker'
@@ -14,42 +13,46 @@ require 'faker'
 
 puts 'creating users and planets...'
 
-
+full_name = Faker::Movies::StarWars.character
 first_user = User.create!(
-  first_name: Faker::Movies::StarWars.character,
-  last_name: Faker::Movies::StarWars,
+  first_name: full_name.split(" ")[0],
+  last_name: full_name.split(" ")[1],
   phone_number:Faker::PhoneNumber.phone_number_with_country_code,
   email: 'nodadasd@email.com',
   password: 'azerty'
   )
 
+full_name = Faker::Movies::StarWars.character
 second_user = User.create!(
-  first_name: Faker::Movies::StarWars.character,
-  last_name: Faker::Movies::StarWars,
+  first_name: full_name.split(" ")[0],
+  last_name: full_name.split(" ")[1],
   phone_number:Faker::PhoneNumber.phone_number_with_country_code,
   email: 'nothing@email.com',
   password: 'azerty'
   )
 
+full_name = Faker::Movies::StarWars.character
 third_user = User.create!(
-  first_name: Faker::Movies::StarWars.character,
-  last_name: Faker::Movies::StarWars,
+  first_name: full_name.split(" ")[0],
+  last_name: full_name.split(" ")[1],
   phone_number:Faker::PhoneNumber.phone_number_with_country_code,
   email: 'ndasdasdg@email.com',
   password: 'azerty'
   )
 
+full_name = Faker::Movies::StarWars.character
 fourth_user = User.create!(
-  first_name: Faker::Movies::StarWars.character,
-  last_name: Faker::Movies::StarWars,
+  first_name: full_name.split(" ")[0],
+  last_name: full_name.split(" ")[1],
   phone_number:Faker::PhoneNumber.phone_number_with_country_code,
   email: 'nooidsdvhsfdoiv@email.com',
   password: 'azerty'
   )
 
+full_name = Faker::Movies::StarWars.character
 fifth_user = User.create!(
-  first_name: Faker::Movies::StarWars.character,
-  last_name: Faker::Movies::StarWars,
+  first_name: full_name.split(" ")[0],
+  last_name: full_name.split(" ")[1],
   phone_number:Faker::PhoneNumber.phone_number_with_country_code,
   email: 'nooidsdadhgreretrtbasgsfdoiv@email.com',
   password: 'azerty'
