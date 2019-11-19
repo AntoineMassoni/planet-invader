@@ -1,24 +1,30 @@
 // Specific CSS for your home-page
 
-h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
-  font-size: 32px;
-  font-weight: bold;
-  margin-bottom: 30px;
+.banner h1 {
   text-align: center;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 80px;
+  font-weight: bold;
 }
 
-h2 {
-  margin: 0;
+.banner h2 {
+  margin: 50px;
   color: white;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   font-size: 24px;
   font-weight: semi-bold;
 }
 
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
 #meteor {
+  display: block;
   margin: 0;
   color: white;
   text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
@@ -28,4 +34,25 @@ h2 {
   font-size: 60px;
   margin-top: 100px;
 }
+
+.container h1 {
+  margin: 50px;
+  text-align: left;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 60px;
+  font-weight: semi-bold;
+}
+.container h2 {
+  margin: 50px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 24px;
+  font-weight: semi-bold;
+}
+
+body {
+  background-color: grey;
+}
+
 
