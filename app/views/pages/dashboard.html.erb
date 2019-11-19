@@ -1,19 +1,32 @@
 <div class="container">
-  <h1>Dashboard</h1>
+
   <div class="user_card">
+    <h1>Dashboard</h1>
     <h2>My user card</h2>
     <%= current_user.first_name %>
-    <!-- <%= current_user.last_name %> -->
+    <%= current_user.last_name %>
     <%= current_user.phone_number %>
     <%= current_user.email %>
     <p>Change password</p>
   </div>
+
+
   <div class="planets_card">
     <h2>My Planets</h2>
-    <img src="<%= current_user.planets.first.planet_pictures.first.photo %>" alt="">
-
-
+    <% current_user.planets.each do |planet| %>
+    <img src="<%= planet.planet_pictures.first.photo %>" alt="">
+    <%= planet.name %>
+    <%= planet.description%>
+    <%= planet.local_population %>
+    <%= planet.activities %>
+    <%= planet.stellar_coordinates %>
+    <%= planet.price %>
+    <%= planet.capacity %>
+    <%= planet.weather %>
+    <% end %>
   </div>
+
+
   <div class="bookings">
     <h2>My bookings</h2>
 
