@@ -1,8 +1,8 @@
 <%= render 'shared/banner' %>
   <div class="container" id="midlle">
-    <h2>Best ratings planets</h2>
+    <h1>Best ratings planets</h1>
       <div class="row">
-        <% @rating_planets.each do |planet| %>
+        <% @planets.each do |planet| %>
           <div class="col-xs-12 col-md-6">
             <%= render 'shared/card', planet: planet %>
           </div>
@@ -10,8 +10,8 @@
     </div>
   </div>
 
-  <div class="container">
-    <h2>Recently added</h2>
+  <div class="container" id="bottom">
+    <h1>Recently added</h1>
       <div class="row">
         <% @new_planets.each do |planet| %>
           <div class="col-xs-12 col-md-6">

@@ -2,12 +2,13 @@ class PlanetsController < ApplicationController
   before_action :set_planet, only: %i[show edit update destroy]
 
   def home
-    @rating_planets = planets.all.order(rating: :desc)
-    @new_planets = planets.all.order(created_at: :desc)
+    @rating_planets = Planet.all.order(rating: :desc)
+    @new_planets = Planet.all.order(created_at: :desc)
+    @planets = Planet.all
   end
 
   def index
-    @planets = Planets.all
+    @planets = Planet.all
   end
 
   def show; end
