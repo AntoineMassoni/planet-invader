@@ -35,7 +35,7 @@ class PlanetsController < ApplicationController
 
   def destroy
     @planet.destroy
-    redirect_to planet_path(@planet)
+    redirect_to planets_path
   end
 
   private
