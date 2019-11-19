@@ -7,6 +7,10 @@ class PlanetsController < ApplicationController
     @planets = Planet.all
   end
 
+  def index
+    @planets = Planet.all
+  end
+
   def search
     @planets = Planet.where(name: params[:search].capitalize)
     if @planets == []
@@ -35,8 +39,6 @@ class PlanetsController < ApplicationController
     @planet = Planet.find(params[:id])
     @booking = Booking.new
   end
-
-  def show; end
 
   def new
 
