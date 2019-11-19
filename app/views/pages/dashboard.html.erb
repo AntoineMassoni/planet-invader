@@ -36,7 +36,7 @@
           <% current_user.planets.each do |planet| %>
           <%= link_to planet_path(planet) do %>
             <div class="card-product">
-              <img src="<%= planet.planet_pictures.first.photo %>" alt="">
+              <%= cl_image_tag planet.planet_pictures.first.photo %>
               <div class="ml-2">
                 <h3><%= planet.name %></h3>
                 <div>Local population : <%= planet.local_population %></div>
