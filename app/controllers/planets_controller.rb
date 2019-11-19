@@ -7,6 +7,30 @@ class PlanetsController < ApplicationController
     @planets = Planet.all
   end
 
+  def search
+    @planets = Planet.where(name: params[:search].capitalize)
+    if @planets == []
+      @planets = Planet.where(price: params[:search].capitalize)
+    elsif @planets == []
+      @planets = Planet.where(capacity: params[:search].capitalize)
+    elsif @planets == []
+      @planets = Planet.where(stellar_coordinates: params[:search].capitalize)
+    elsif @planets == []
+      @planets = Planet.where(activities: params[:search].capitalize)
+    elsif @planets == []
+      @planets = Planet.where(weather: params[:search].capitalize)
+    elsif @planets == []
+      @planets = Planet.where(local_population: params[:search].capitalize)
+    end
+
+    # raise
+
+    @planet = @planets.first
+
+    # redirect_to
+    redirect_to planet_path(@planet)
+  end
+
   def index
     @planets = Planet.all
   end
