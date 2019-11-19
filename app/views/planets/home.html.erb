@@ -1,23 +1,29 @@
 <%= render 'shared/banner' %>
   <div class="container" id="midlle">
     <h1>Best rating planets</h1>
-      <div class="row">
-        <% @planets.first(3).each do |planet| %>
-          <div class="col-md-12">
-            <%= render 'shared/card', planet: planet %>
-          </div>
-      <% end %>
+      <div class="separator">
+        <div class="wrapper"></div>
+      </div>
+        <div class="row">
+          <% @planets.first(3).each do |planet| %>
+            <div class="col-md-12">
+              <%= render 'shared/card', planet: planet %>
+            </div>
+        <% end %>
+      </div>
     </div>
-  </div>
 
-  <div class="container" id="bottom">
-    <h1>Recently added</h1>
-      <div class="row">
-        <% @new_planets.first(3).each do |planet| %>
-          <div class="col-md-12">
-            <%= render 'shared/card', planet: planet %>
-          </div>
-      <% end %>
+    <div class="container" id="bottom">
+      <h1>Recently added</h1>
+      <div class="separator">
+        <div class="wrapper"></div>
+      </div>
+        <div class="row">
+          <% @new_planets.first(3).each do |planet| %>
+            <div class="col-md-12">
+              <%= render 'shared/card', planet: planet %>
+            </div>
+        <% end %>
+      </div>
     </div>
-  </div>
 
