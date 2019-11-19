@@ -38,11 +38,17 @@ class PlanetsController < ApplicationController
   def show
     @planet = Planet.find(params[:id])
     @booking = Booking.new
+    @bookings = @planet.next_bookings
+    @bookings_dates = @bookings.map do |booking|
+      {
+        from: booking.check_in,
+        to: booking.check_out
+      }
+    end
   end
 
   def new
-
-    @planet =  Planet.new
+    @planet = Planet.new
   end
 
   def create

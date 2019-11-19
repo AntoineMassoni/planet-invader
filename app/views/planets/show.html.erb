@@ -4,11 +4,11 @@
     <% pictures.each do |picture| %>
       <% if picture == @planet.planet_pictures.first %>
         <div class="carousel-item active">
-          <img src="<%= picture.photo %>" alt="" class="carousel-img">
+          <%= cl_image_tag picture.photo, class: "carousel-img" %>
         </div>
       <% else %>
         <div class="carousel-item">
-          <img src="<%= picture.photo %>" alt="" class="carousel-img">
+          <%= cl_image_tag picture.photo, class: "carousel-img" %>
         </div>
       <% end %>
     <% end %>
@@ -23,19 +23,43 @@
   </a>
 </div>
 
-<div class="container">
+<div class="show-container">
   <h1 id='planet-name'><%= @planet.name %></h1>
-  <div class="d-flex">
-    <div class="planet-infos flex-grow-1">
-      <p><strong>Local Population:</strong> <%= @planet.local_population %></p>
-      <p><strong>Description:</strong> <%= simple_format(@planet.description) %></p>
-      <p><strong>Stellar Coordinates:</strong> <%= @planet.stellar_coordinates %></p>
-      <p><strong>Activities:</strong> <%= @planet.activities %></p>
-      <p><strong>Weather:</strong> <%= @planet.weather %></p>
+
+  <div class="row">
+    <div class="col-8">
+      <div class="planet-infos">
+        <div class="category">
+          <h3><i class="fab fa-reddit-alien"></i> Local Population:</h3>
+          <p class="bottom-separation"><%= @planet.local_population %></p>
+        </div>
+        <div class="category">
+          <h3><i class="far fa-file-alt"></i> Description:</h3>
+          <p><%= simple_format(@planet.description) %></p>
+          <p class="bottom-separation"></p>
+        </div>
+        <div class="category">
+          <h3><i class="fas fa-map-marker-alt"></i> Stellar Coordinates:</h3>
+          <p class="bottom-separation"><%= @planet.stellar_coordinates %></p>
+        </div>
+        <div class="category">
+          <h3><i class="fas fa-dice"></i> Activities:</h3>
+          <p class="bottom-separation"><%= @planet.activities %></p>
+        </div>
+        <div class="category">
+          <h3><i class="fas fa-cloud-sun"></i> Weather:</h3>
+          <p><%= @planet.weather %></p>
+        </div>
+      </div>
     </div>
-    <div class="booking-card">
-      <h2>Book this planet</h2>
-      <%= render 'shared/bookingForm', planet: @planet, booking: @booking %>
+
+    <div class="col-4">
+      <div class="booking-card">
+        <h2>Book this planet</h2>
+        <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
+          <%= render 'shared/bookingForm', planet: @planet, booking: @booking %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

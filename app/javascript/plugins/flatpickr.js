@@ -3,7 +3,16 @@ import flatpickr from "flatpickr";
 import "flatpickr/dist/themes/airbnb.css";
 import rangePlugin from "flatpickr/dist/plugins/rangePlugin";
 
-flatpickr("#check-in", {
-  altInput: true,
-  plugins: [new rangePlugin({ input: "#check-out"})]
-});
+const bookingForm = document.getElementById('booking-form-div');
+
+
+ if (bookingForm) {
+  const bookings = JSON.parse(bookingForm.dataset.bookings);
+
+  flatpickr("#check-in", {
+    altInput: true,
+    minDate: "today",
+    plugins: [new rangePlugin({ input: "#check-out"})],
+    "disable": bookings,
+  });
+}
