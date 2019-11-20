@@ -56,18 +56,19 @@ class PlanetsController < ApplicationController
 
   def create
     @planet = Planet.new(planet_params)
+    @planet.user = current_user
     if @planet.save
+
+      create_pictures
       redirect_to planets_path
     else
       render :new
     end
   end
 
-  def edit; end
-
   def update
     @planet = planet.update(planet_params)
-    redirect_to flat_path(@planet)
+    redirect_to planet_path(@planet)
   end
 
   def destroy
@@ -76,6 +77,13 @@ class PlanetsController < ApplicationController
   end
 
   private
+
+  def create_pictures
+    photos = params.dig(:planet, :pictures) || []
+    photos.each do |photo|
+      @planet.planet_pictures.create(photo: photo)
+    end
+  end
 
   def set_planet
     @planet = Planet.find(params[:id])
