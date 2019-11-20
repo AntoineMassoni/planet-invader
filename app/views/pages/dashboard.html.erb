@@ -1,21 +1,23 @@
 
-  <div class="profile-container">
+  <div class="dashboard-container">
     <h1>Dashboard</h1>
-
-
+     <div class="separator">
+        <div class="wrapper"></div>
+      </div>
+      <div class="container-title">
+        <h2>My infos</h2>
+        <h2>My Planets</h2>
+        <h2>My bookings</h2>
+      </div>
     <div class="row">
       <div class="col-3 pl-1 pr-1">
-        <div class="profile-card">
-          <div>
-            <div>
+        <div class="card-product-side">
               <div class="ml-2 ">
-                <h2>Hello,
-                  <%=current_user.first_name %> <%= current_user.last_name %>!
-                </h2>
                 <div>
-                  <p>Téléphone : <%= current_user.phone_number %></p>
+                  <h4>Hello, <%=current_user.first_name %> <%= current_user.last_name %>!</h4>
+                  <p><strong>Your phone number:</strong> <%= current_user.phone_number %></p>
                   <div>
-                    <p>Email : <%= current_user.email %></p>
+                    <p><strong>Your email:</strong> <%= current_user.email %></p>
                   </div>
 
                 </div>
@@ -25,14 +27,11 @@
 
               </div>
 
-            </div>
-          </div>
         </div>
       </div>
 
       <div class="col-6 pl-1 pr-1">
         <div class="dashboard-card">
-          <h2>My Planets</h2>
           <% current_user.planets.each do |planet| %>
           <%= link_to planet_path(planet) do %>
             <div class="card-product">
@@ -58,25 +57,21 @@
             <% end %>
           <% end %>
         </div>
-
-        <a class="btn btn-ghost" href="planets/new">Add a planet</a>
+        <a class="btn" href="planets/new">Add a planet</a>
       </div>
 
       <div class="col-3 pl-1 pr-1">
-        <div class="dashboard-card">
-          <h2>My bookings</h2>
+        <div class="card-product-side">
             <% current_user.bookings.each do |booking| %>
               <div class="bookings">
-                <div>Visiting : <%= booking.planet.name %></div>
-                <div>FROM, : <%= booking.check_in %></div>
-                <div>TO : <%= booking.check_out %></div>
-                <div>WITH : <%= booking.travelers %> travelers</div>
+                <div><strong>Visiting:</strong> <%= booking.planet.name %></div>
+                <div><strong>from:</strong> <%= booking.check_in %></div>
+                <div><strong>to:</strong> <%= booking.check_out %></div>
+                <div><strong>people:</strong> <%= booking.travelers %> travelers</div>
               </div>
             <% end %>
-
         </div>
       </div>
-
     </div>
   </div>
 
