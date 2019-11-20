@@ -55,6 +55,7 @@ class PlanetsController < ApplicationController
     @planet = Planet.new(planet_params)
     @planet.user = current_user
     if @planet.save
+
       create_pictures
       redirect_to planets_path
     else
