@@ -55,7 +55,9 @@
         </div>
         <div class="category bottom-separation">
           <h3>Add a review:</h3>
-          <%= render 'shared/review_form', planet: @planet, review: @review %>
+          <div class="form-container">
+            <%= render 'shared/review_form', planet: @planet, review: @review %>
+          </div>
           <p></p>
         </div>
         <div class="category">
