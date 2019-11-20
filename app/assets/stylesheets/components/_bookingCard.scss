@@ -2,12 +2,15 @@
   padding: 20px;
   background-color: white;
   border-radius: 10px;
+  position: sticky;
+  top: 100px;
 }
 
 .planet-infos {
   padding: 20px;
   border-radius: 10px;
   background-color: white;
+  height: 5000px;
 }
 
 .show-container {
@@ -15,11 +18,11 @@
   margin: 0 auto;
 }
 
-.category .bottom-separation {
-  padding-bottom: 15px;
+.bottom-separation {
   border-bottom: 1px solid rgba(43, 45, 46, 0.4);
   margin-left: -20px;
   margin-right: -20px;
+  margin-bottom: 20px;
 }
 
 .category h3 {
@@ -28,4 +31,18 @@
 
 .category {
   text-align: center;
+}
+
+.category p {
+  color: black;
+  font-size: 16px;
+}
+
+#booking-form-div {
+  color: black;
+  font-size: 16px;
+}
+
+.rating {
+  text-align: left;
 }

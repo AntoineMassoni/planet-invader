@@ -24,31 +24,68 @@
 </div>
 
 <div class="show-container">
-  <h1 id='planet-name'><%= @planet.name %></h1>
+  <div class="d-flex justify-content-center planet-head">
+    <h1 id='planet-name'><%= @planet.name %></h1>
+    <%= render 'shared/rating_stars', rating: @average_rating %>
+  </div>
 
   <div class="row">
     <div class="col-8">
       <div class="planet-infos">
-        <div class="category">
+        <div class="category bottom-separation">
           <h3><i class="fab fa-reddit-alien"></i> Local Population:</h3>
-          <p class="bottom-separation"><%= @planet.local_population %></p>
+          <p><%= @planet.local_population %></p>
         </div>
-        <div class="category">
+        <div class="category bottom-separation">
           <h3><i class="far fa-file-alt"></i> Description:</h3>
           <p><%= simple_format(@planet.description) %></p>
-          <p class="bottom-separation"></p>
+          <p></p>
         </div>
-        <div class="category">
+        <div class="category bottom-separation">
           <h3><i class="fas fa-map-marker-alt"></i> Stellar Coordinates:</h3>
-          <p class="bottom-separation"><%= @planet.stellar_coordinates %></p>
+          <p><%= @planet.stellar_coordinates %></p>
         </div>
-        <div class="category">
+        <div class="category bottom-separation">
           <h3><i class="fas fa-dice"></i> Activities:</h3>
-          <p class="bottom-separation"><%= @planet.activities %></p>
+          <p><%= @planet.activities %></p>
         </div>
-        <div class="category">
+        <div class="category bottom-separation">
           <h3><i class="fas fa-cloud-sun"></i> Weather:</h3>
           <p><%= @planet.weather %></p>
+        </div>
+        <div class="category bottom-separation">
+          <h3>Add a review:</h3>
+          <%= render 'shared/reviewForm', planet: @planet, review: @review %>
+          <p></p>
+        </div>
+        <div class="category">
+          <h3>All reviews</h3>
+          <% @reviews.each do |review| %>
+            <div class="review mb-2">
+              <% user = User.find(review.user_id) %>
+              <div class="review-infos d-flex">
+                <div class="name">
+                  <p><%= user.first_name %> <%= user.last_name %>'s review: </p>
+                </div>
+                <div class="rating">
+                  <%= render 'shared/rating_stars', rating: review.rating %>
+                </div>
+              </div>
+              <div class="review-content d-flex">
+                <div class="content">
+                  <%= simple_format(review.content) %>
+                </div>
+                <div class="user-modif">
+                  <%= link_to edit_review_path(review) do %>
+                    <i class="fas fa-pen"></i>
+                  <% end %>
+                  <%= link_to edit_review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="fas fa-pen"></i>
+                  <% end %>
+                </div>
+              </div>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
