@@ -64,7 +64,7 @@ class PlanetsController < ApplicationController
 
   def update
     @planet = planet.update(planet_params)
-    redirect_to flat_path(@planet)
+    redirect_to planet_path(@planet)
   end
 
   def destroy
