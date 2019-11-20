@@ -53,7 +53,9 @@ class PlanetsController < ApplicationController
 
   def create
     @planet = Planet.new(planet_params)
+    @planet.user = current_user
     if @planet.save
+      create_pictures
       redirect_to planets_path
     else
       render :new
@@ -73,6 +75,13 @@ class PlanetsController < ApplicationController
   end
 
   private
+
+  def create_pictures
+  photos = params.dig(:planet, :pictures) || []
+  photos.each do |photo|
+    @planet.planet_pictures.create(photo: photo)
+  end
+end
 
   def set_planet
     @planet = Planet.find(params[:id])
