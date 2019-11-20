@@ -1,12 +1,21 @@
 @import "../components/carousel";
 @import "../components/bookingCard";
+@import "../components/reviews";
 
+
+.planet-head {
+  align-items: center;
+}
+
+.planet-head  h1 {
+  margin-right: 30px;
+}
 
 #planet-name {
   margin-top: 10px;
   margin-bottom: 30px;
   text-align: center;
-  color: black;
+  color: white;
   text-shadow: none;
   font-size: 40px;
   font-weight: bold;

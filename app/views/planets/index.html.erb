@@ -8,6 +8,7 @@
     <% @planets.each do |planet| %>
     <div class="col-4 col-sm-12 col-md-6 col-lg-4">
       <div class="planet-card">
+          <%= link_to planet_path(planet[:id]) do %>
         <div class="planet-card-image">
           <%= cl_image_tag planet.planet_pictures.first.photo %>
         </div>
@@ -15,13 +16,13 @@
           <div class="planet-card-title">
             <h4><%= planet.name %></h4>
           </div>
-          <p>Coordinates <%= planet.stellar_coordinates %></p>
+          <p>Coordinates: <%= planet.stellar_coordinates %></p>
           <div class="flex">
             <div class="flex">
-              <p>capacity <%= planet.capacity %></p>
+              <h3><%= planet.capacity %> <i class="fas fa-user-astronaut"></i></h3>
             </div>
             <div class="flex ml-3">
-              <p>price <%= planet.price %></p>
+              <h3><%= planet.price %><i class="far fa-gem"></i></h3>
             </div>
           </div>
         </div>
@@ -34,6 +35,7 @@
           class: 'ml-3 btn btn-danger'
           %>
         </div>
+        <% end %>
       </div>
     </div>
     <% end %>
