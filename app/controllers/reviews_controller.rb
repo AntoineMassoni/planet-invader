@@ -1,5 +1,5 @@
 class ReviewsController < ApplicationController
-  before_action :set_planet
+  before_action :set_planet, only: %i[index shox new create]
   before_action :set_review, only: %i[edit update destroy]
 
   def index
@@ -29,9 +29,18 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    planet = @review.planet
+    if @review.update(review_params)
+      redirect_to planet_path(planet)
+    else
+      render :edit
+    end
   end
 
   def destroy
+    planet = @review.planet
+    @review.destroy
+    redirect_to planet_path(planet)
   end
 
   private

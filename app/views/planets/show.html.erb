@@ -55,7 +55,7 @@
         </div>
         <div class="category bottom-separation">
           <h3>Add a review:</h3>
-          <%= render 'shared/reviewForm', planet: @planet, review: @review %>
+          <%= render 'shared/review_form', planet: @planet, review: @review %>
           <p></p>
         </div>
         <div class="category">
@@ -79,8 +79,8 @@
                   <%= link_to edit_review_path(review) do %>
                     <i class="fas fa-pen"></i>
                   <% end %>
-                  <%= link_to edit_review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
-                    <i class="fas fa-pen"></i>
+                  <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+                    <i class="fas fa-trash"></i>
                   <% end %>
                 </div>
               </div>
@@ -94,7 +94,7 @@
       <div class="booking-card">
         <h2>Book this planet</h2>
         <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
-          <%= render 'shared/bookingForm', planet: @planet, booking: @booking %>
+          <%= render 'shared/booking_form', planet: @planet, booking: @booking %>
         </div>
       </div>
     </div>
