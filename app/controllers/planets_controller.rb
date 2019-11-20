@@ -40,7 +40,11 @@ class PlanetsController < ApplicationController
     @booking = Booking.new
     @review = Review.new
     @reviews = Review.where(planet_id: @planet.id)
-    @average_rating = average_calcul
+    @average_rating = if @reviews.length.zero?
+                        0
+                      else
+                        average_calcul
+                      end
     @bookings = @planet.next_bookings
     @bookings_dates = @bookings.map do |booking|
       {
