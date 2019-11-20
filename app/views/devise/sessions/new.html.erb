@@ -1,20 +1,42 @@
-<h2>Log in</h2>
 
-<%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="form-inputs">
-    <%= f.input :email,
-                required: false,
-                autofocus: true,
-                input_html: { autocomplete: "email" } %>
-    <%= f.input :password,
-                required: false,
-                input_html: { autocomplete: "current-password" } %>
-    <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
-  </div>
+  <div class="limiter">
+    <div class="container-login100">
+      <div class="wrap-login100">
 
-  <div class="form-actions">
-    <%= f.button :submit, "Log in" %>
-  </div>
-<% end %>
 
-<%= render "devise/shared/links" %>
+        <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), class: "login100-form validate-form") do |f| %>
+          <span class="login100-form-logo">
+            <i class="fas fa-space-shuttle"></i>
+          </span>
+
+          <span class="login100-form-title p-b-34 p-t-27">
+            Welcome, Invader!
+          </span>
+
+          <div class="wrap-input100 validate-input" id="wrap_username" data-validate="Enter username">
+            <%= f.input :email,
+                        required: false,
+                        autofocus: true,
+                        input_html: { autocomplete: "email", class: "input100" } %>
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="wrap-input100 validate-input" id="wrap_password" data-validate="Enter password">
+            <%= f.input :password,
+                        required: false,
+                        input_html: { autocomplete: "current-password", class: "input100" } %>
+            <span class="focus-input100"></span>
+          </div>
+
+          <div class="contact100-form-checkbox">
+            <input class="input-checkbox100" id="ckb1" type="checkbox" name="remember-me">
+            <%= f.input :remember_me,
+                        as: :boolean if devise_mapping.rememberable? %>
+          </div>
+
+          <div class="container-login100-form-btn">
+            <%= f.button :submit, "Log in", class: "login100-form-btn" %>
+          </div>
+        <% end %>
+        </div>
+        </div>
