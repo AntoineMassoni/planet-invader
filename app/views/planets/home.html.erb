@@ -14,11 +14,9 @@
         <div class="wrapper"></div>
       </div>
         <div class="row">
-          <% @planets.first(3).each do |planet| %>
-            <div class="col-md-12">
-              <%= render 'shared/card', planet: planet %>
-            </div>
-        <% end %>
+          <div class="col-md-12">
+            <%= render 'shared/card', planet: @planet %>
+          </div>
       </div>
     </div>
 
@@ -31,11 +29,9 @@
         <div class="wrapper"></div>
       </div>
         <div class="row">
-          <% @new_planets.first(3).each do |planet| %>
-            <div class="col-md-12">
-              <%= render 'shared/card', planet: planet %>
-            </div>
-        <% end %>
-      </div>
+          <div class="col-md-12">
+            <%= render 'shared/card', planet: @planet %>
+          </div>
+        </div>
     </div>
 
