@@ -19,6 +19,9 @@
     <%= f.label :price %>
     <%= f.number_field :price, class: 'form-control' %>
   </div>
+  <div>
+   <%= f.input :pictures, as: :file, input_html: { multiple: true } %>
+  </div>
   <div class="mt-3">
      <%= f.submit class: 'btn btn-primary' %>
     <%= link_to 'no longer wish to add a planet?', planets_path, class: 'btn btn-danger ml-2' %>
