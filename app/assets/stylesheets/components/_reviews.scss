@@ -1,0 +1,30 @@
+.name p {
+  font-size: 24px;
+  color: black;
+}
+
+.review {
+  padding: 20px;
+  background-color: rgba(230, 230, 230, 0.4);
+  border-radius: 4px;
+}
+
+.review-infos {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content {
+  text-align: left;
+}
+
+.review-content {
+  justify-content: space-between;
+  align-items: end;
+}
+
+
+.user-modif i {
+  color: black;
+  font-size: 16px;
+}

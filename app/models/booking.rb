@@ -2,6 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :user
   belongs_to :planet
   validates :check_in, :check_out, :travelers, presence: true
+  validates :travelers, numericality: true
 
   # def check_out_after_check_in
   #   errors.add(:check_out, "must be after the start date") if check_in > check_out
