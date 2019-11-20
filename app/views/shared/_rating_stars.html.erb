@@ -1,0 +1,10 @@
+<span class="score">
+  <div class="score-wrap">
+    <% rating.times do %>
+      <i class="fas fa-meteor stars-active"></i>
+    <% end %>
+    <% (5 - rating).times do %>
+      <i class="fas fa-meteor stars-inactive"></i>
+    <% end %>
+  </div>
+</span>
