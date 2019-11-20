@@ -13,12 +13,11 @@ require 'faker'
 
 puts 'creating users and planets...'
 
-full_name = Faker::Movies::StarWars.character
 first_user = User.create!(
-  first_name: full_name.split(" ")[0],
-  last_name: full_name.split(" ")[1],
+  first_name: Luke,
+  last_name: Skywalker,
   phone_number:Faker::PhoneNumber.phone_number_with_country_code,
-  email: 'nodadasd@email.com',
+  email: 'thejedidetatooined@ordrejedi.com',
   password: 'azerty'
   )
 
@@ -238,23 +237,23 @@ PlanetPicture.create!(
   planet: Planet.last
   )
 
-Planet.create!(
-  name: 'Tatooine',
-  description: 'Desert planet and childhood home of Anakin Skywalker and Luke Skywalker.',
-  price: 30,
-  capacity: 5,
-  stellar_coordinates: Faker::TvShows::StarTrek.location,
-  activities: 'you can visit the house of Jabba',
-  weather: 'hot during the day, cold in the night',
-  local_population: Faker::Movies::StarWars.specie,
-  # remote_photo_url: 'https://i.ytimg.com/vi/a1AZHMg-J5Q/maxresdefault.jpg',
-  user: fifth_user
-)
+# Planet.create!(
+#   name: 'Tatooine',
+#   description: 'Desert planet and childhood home of Anakin Skywalker and Luke Skywalker.',
+#   price: 30,
+#   capacity: 5,
+#   stellar_coordinates: Faker::TvShows::StarTrek.location,
+#   activities: 'you can visit the house of Jabba',
+#   weather: 'hot during the day, cold in the night',
+#   local_population: Faker::Movies::StarWars.specie,
+#   # remote_photo_url: 'https://i.ytimg.com/vi/a1AZHMg-J5Q/maxresdefault.jpg',
+#   user: fifth_user
+# )
 
-PlanetPicture.create!(
-  remote_photo_url: 'https://i.ytimg.com/vi/a1AZHMg-J5Q/maxresdefault.jpg',
-  planet: Planet.last
-  )
+# PlanetPicture.create!(
+#   remote_photo_url: 'https://i.ytimg.com/vi/a1AZHMg-J5Q/maxresdefault.jpg',
+#   planet: Planet.last
+#   )
 
 
 puts 'done!'
