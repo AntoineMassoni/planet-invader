@@ -12,21 +12,15 @@
           <p>Coordinates <%= planet.stellar_coordinates %></p>
           <div class="flex">
             <div class="flex">
-              <p>capacity <%= planet.capacity %></p>
+              <h4><%= planet.capacity %> <i class="fas fa-user-astronaut"></i></h4>
             </div>
             <div class="flex ml-3">
-              <p>price <%= planet.price %></p>
+              <h4><%= planet.price %><i class="far fa-gem"></i></h4>
             </div>
           </div>
         </div>
         <div class="planet-card-actions">
-          <%= link_to 'More info', planet_path(planet), class: 'btn btn-success' %>
-          <%= link_to 'Edit', edit_planet_path(planet), class: 'btn btn-warning' %>
-          <%= link_to "Remove", planet_path(planet),
-          method: :delete,
-          data: { confirm: "really?" },
-          class: 'ml-3 btn btn-danger'
-          %>
+          <p></p>
         </div>
       </div>
     </div>
