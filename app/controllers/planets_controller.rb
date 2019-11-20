@@ -62,8 +62,6 @@ class PlanetsController < ApplicationController
     end
   end
 
-  def edit; end
-
   def update
     @planet = planet.update(planet_params)
     redirect_to planet_path(@planet)
@@ -77,11 +75,11 @@ class PlanetsController < ApplicationController
   private
 
   def create_pictures
-  photos = params.dig(:planet, :pictures) || []
-  photos.each do |photo|
-    @planet.planet_pictures.create(photo: photo)
+    photos = params.dig(:planet, :pictures) || []
+    photos.each do |photo|
+      @planet.planet_pictures.create(photo: photo)
+    end
   end
-end
 
   def set_planet
     @planet = Planet.find(params[:id])
