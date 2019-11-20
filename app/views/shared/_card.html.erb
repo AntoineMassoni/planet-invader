@@ -1,7 +1,7 @@
  <div class="row">
     <% @planets.each do |planet| %>
     <div class="col-xs-4 col-sm-12 col-md-6 col-lg-4">
-      <%= link_to planet_path do %>
+      <%= link_to planet_path(planet[:id]) do %>
       <div class="planet-card">
         <div class="planet-card-image">
           <%= cl_image_tag planet.planet_pictures.first.photo %>
