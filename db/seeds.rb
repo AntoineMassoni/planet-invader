@@ -14,8 +14,8 @@ require 'faker'
 puts 'creating users and planets...'
 
 first_user = User.create!(
-  first_name: Luke,
-  last_name: Skywalker,
+  first_name: 'Luke',
+  last_name: 'Skywalker',
   phone_number:Faker::PhoneNumber.phone_number_with_country_code,
   email: 'thejedidetatooined@ordrejedi.com',
   password: 'azerty'
