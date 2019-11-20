@@ -3,7 +3,7 @@
   background-color: white;
   border-radius: 10px;
   position: sticky;
-  top: 100px;
+  top: 20px;
 }
 
 .planet-infos {
@@ -21,7 +21,6 @@
   border-bottom: 1px solid rgba(43, 45, 46, 0.4);
   margin-left: -20px;
   margin-right: -20px;
-  margin-bottom: 20px;
 }
 
 .category h3 {
@@ -30,6 +29,7 @@
 
 .category {
   text-align: center;
+  padding: 20px;
 }
 
 .category p {
@@ -44,4 +44,9 @@
 
 .rating {
   text-align: left;
+}
+
+.form-container {
+  width: 70%;
+  margin: 0 auto;
 }
