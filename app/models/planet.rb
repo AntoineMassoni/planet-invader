@@ -1,5 +1,4 @@
 class Planet < ApplicationRecord
-  searchkick
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
   belongs_to :user
@@ -13,6 +12,12 @@ class Planet < ApplicationRecord
     Booking.where("planet_id = ? AND check_out > ?", self.id, Date.today)
   end
 
+  include PgSearch::Model
+  pg_search_scope :search,
+    against: [:name, :description, :weather],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 
   def average_rating
     average_rating = 0
@@ -27,3 +32,4 @@ class Planet < ApplicationRecord
     end
   end
 end
+
