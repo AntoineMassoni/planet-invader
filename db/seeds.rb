@@ -72,20 +72,20 @@ PlanetPicture.create!(
   planet: Planet.last
   )
 
-# Planet.create!(
-#   name: 'Agamar',
-#   description: 'Small mineral planet located in a remote section of the galaxy, its surface is covered with a layer of white salt over its red-colored soil. In Leia, Princess of Alderaan it is the location of an early Rebel Alliance outpost. Leia and her remaining Resistance forces flee there in The Last Jedi, where they face off with the First Order.',
-#   price: 56,
-#   capacity: 3,
-#   stellar_coordinates: Faker::TvShows::StarTrek.location,
-#   weather: Faker::Music.chord,
-#   user: first_user
-# )
+Planet.create!(
+  name: 'Agamar',
+  description: 'Small mineral planet located in a remote section of the galaxy, its surface is covered with a layer of white salt over its red-colored soil. In Leia, Princess of Alderaan it is the location of an early Rebel Alliance outpost. Leia and her remaining Resistance forces flee there in The Last Jedi, where they face off with the First Order.',
+  price: 56,
+  capacity: 3,
+  stellar_coordinates: Faker::TvShows::StarTrek.location,
+  weather: Faker::Music.chord,
+  user: first_user
+)
 
-# PlanetPicture.create!(
-#   remote_photo_url: 'https://i.pinimg.com/originals/94/1b/a0/941ba0698464c77179782cbeda53ad6f.jpg',
-#   planet: Planet.last
-#   )
+PlanetPicture.create!(
+  remote_photo_url: 'https://i.pinimg.com/originals/94/1b/a0/941ba0698464c77179782cbeda53ad6f.jpg',
+  planet: Planet.last
+  )
 
 Planet.create!(
   name: 'Alderaan',
