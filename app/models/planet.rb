@@ -1,4 +1,5 @@
 class Planet < ApplicationRecord
+  include PgSearch::Model
   has_many :bookings, dependent: :destroy
   has_many :reviews, dependent: :destroy
   belongs_to :user
@@ -13,13 +14,6 @@ class Planet < ApplicationRecord
     Booking.where("planet_id = ? AND check_out > ?", self.id, Date.today)
   end
 
-  include PgSearch::Model
-  pg_search_scope :search,
-    against: [:name, :description, :weather],
-    using: {
-      tsearch: { prefix: true } # <-- now `superman batm` will return something!
-    }
-
   def average_rating
     average_rating = 0
     @reviews = self.reviews
@@ -32,10 +26,17 @@ class Planet < ApplicationRecord
       return average_rating
     end
   end
+
+  def display_add_review_form(user)
+    user.bookings.select { |booking| booking.check_out < Date.today }.map(&:planet).include?(self)
+  end
+
+  pg_search_scope :search,
+    against: [:name, :description, :weather],
+    using: {
+      tsearch: { prefix: true } # <-- now `superman batm` will return something!
+    }
 end
-
-
-
 
 def user_id_exists
   return false if User.find_by_id(self.user_id).nil?

@@ -1,6 +1,6 @@
 class PlanetsController < ApplicationController
   before_action :set_planet, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: %i[home index]
   def home
     @rating_planets = Planet.all.order(rating: :desc)
     @new_planets = Planet.all.order(created_at: :desc)
@@ -51,6 +51,10 @@ class PlanetsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    authorize @planet
   end
 
   def update
