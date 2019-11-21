@@ -23,12 +23,14 @@
   </a>
 </div>
 
+
+<div class="show-container">
   <div class="row">
     <div class="col-8">
       <div class="planet-infos">
         <h1 id='planet-name'><%= @planet.name %></h1>
         <div class="category bottom-separation">
-          <h3><i class="fas fa-map-marker-alt"></i> Price per day</h3>
+          <h3><i class="fab fa-ethereum"></i> Price per day</h3>
           <p id="price"><%= @planet.price %></p>
           <h3><i class="fas fa-map-marker-alt"></i> Stellar Coordinates:</h3>
           <p><%= @planet.stellar_coordinates %></p>
@@ -87,7 +89,7 @@
     <div class="col-4">
       <div class="booking-card">
         <h2>Book this planet</h2>
-        <%= render 'shared/rating_stars', rating: @average_rating %>
+        <%= render 'shared/rating_stars', rating: @planet.average_rating %>
         <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
           <%= render 'shared/booking_form', planet: @planet, booking: @booking %>
         </div>
