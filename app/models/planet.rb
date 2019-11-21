@@ -12,4 +12,19 @@ class Planet < ApplicationRecord
   def next_bookings
     Booking.where("planet_id = ? AND check_out > ?", self.id, Date.today)
   end
+
+  searchkick
+
+  def average_rating
+    average_rating = 0
+    @reviews = self.reviews
+
+    if @reviews == []
+      return average_rating = 0
+    else
+      @reviews.each { |review| average_rating += review.rating }
+      average_rating /= @reviews.length
+      return average_rating
+    end
+  end
 end
