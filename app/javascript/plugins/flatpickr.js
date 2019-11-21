@@ -10,7 +10,6 @@ const bookingForm = document.getElementById('booking-form-div');
   const bookings = JSON.parse(bookingForm.dataset.bookings);
 
   flatpickr("#check-in", {
-    altInput: true,
     minDate: "today",
     plugins: [new rangePlugin({ input: "#check-out"})],
     "disable": bookings,
