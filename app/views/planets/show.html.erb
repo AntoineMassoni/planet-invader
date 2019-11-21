@@ -23,6 +23,13 @@
   </a>
 </div>
 
+
+<div class="show-container">
+  <div class="d-flex justify-content-center planet-head">
+    <h1 id='planet-name'><%= @planet.name %></h1>
+    <%= render 'shared/rating_stars', rating: @planet.average_rating %>
+  </div>
+
   <div class="row">
     <div class="col-8">
       <div class="planet-infos">
