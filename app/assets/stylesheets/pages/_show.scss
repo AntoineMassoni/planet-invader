@@ -2,6 +2,11 @@
 @import "../components/bookingCard";
 @import "../components/reviews";
 
+.container-title-show {
+  display: flex;
+  padding: 50px;
+}
+
 .show-container {
   background-color: white;
 }
