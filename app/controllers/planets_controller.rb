@@ -9,7 +9,11 @@ class PlanetsController < ApplicationController
 
   def index
     if params[:search].present?
-      @planets = Planet.search "#{params[:search]}"
+      @planets = Planet.search(params[:search])
+      if @planets.size == 0
+        @message = "Pas de résultat pour #{params[:search]}"
+        @planets = Planet.all
+      end
     else
       @planets = Planet.all
     end
