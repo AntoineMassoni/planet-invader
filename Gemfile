@@ -14,13 +14,11 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-
 # gem faker
 gem 'faker', '~> 1.4', '>= 1.4.3'
 
 # gem devise
 gem 'devise'
-
 
 # search
 gem 'pg_search', '~> 2.3.0'
