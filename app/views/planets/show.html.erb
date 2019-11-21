@@ -53,6 +53,7 @@
           <h3>All reviews</h3>
           <% @reviews.each do |review| %>
             <div class="review mb-2">
+              <img class="avatar-review" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" alt="">
               <% user = User.find(review.user_id) %>
               <div class="review-infos d-flex">
                 <div class="name">
