@@ -25,16 +25,12 @@
 
 
 <div class="show-container">
-  <div class="d-flex justify-content-center planet-head">
-    <h1 id='planet-name'><%= @planet.name %></h1>
-  </div>
-
   <div class="row">
     <div class="col-8">
       <div class="planet-infos">
         <h1 id='planet-name'><%= @planet.name %></h1>
         <div class="category bottom-separation">
-          <h3><i class="fas fa-map-marker-alt"></i> Price per day</h3>
+          <h3><i class="fab fa-ethereum"></i> Price per day</h3>
           <p id="price"><%= @planet.price %></p>
           <h3><i class="fas fa-map-marker-alt"></i> Stellar Coordinates:</h3>
           <p><%= @planet.stellar_coordinates %></p>
