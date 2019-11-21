@@ -49,7 +49,8 @@ class PlanetsController < ApplicationController
   end
 
   def update
-    @planet = planet.update(planet_params)
+    @planet.update(planet_params)
+    create_pictures
     redirect_to planet_path(@planet)
   end
 
