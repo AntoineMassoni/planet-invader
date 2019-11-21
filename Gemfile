@@ -14,14 +14,13 @@ gem 'sassc-rails'
 gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
-
 # gem faker
 gem 'faker', '~> 1.4', '>= 1.4.3'
 
 # gem devise
 gem 'devise'
 
-#gem searchkick
+# gem searchkick
 gem 'searchkick', '~> 3.0'
 
 # gem cloudinary
