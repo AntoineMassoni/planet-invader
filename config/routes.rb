@@ -4,8 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   get "dashboard", to: "pages#dashboard"
   resources :planets do
-    resources :bookings, only: [:index, :new, :create]
-    resources :reviews, only: [:index, :new, :create]
+   resources :bookings, only: [:index, :new, :create]
+   resources :reviews, only: [:index, :new, :create]
   end
   resources :bookings, only: [:destroy, :edit, :update]
   resources :reviews, only: [:edit, :update, :destroy]
