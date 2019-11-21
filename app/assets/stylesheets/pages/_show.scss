@@ -2,21 +2,43 @@
 @import "../components/bookingCard";
 @import "../components/reviews";
 
-
+.show-container {
+  background-color: white;
+}
 .planet-head {
   align-items: center;
 }
 
 .planet-head  h1 {
   margin-right: 30px;
+  padding: 10px;
+  margin-top: 30px;
 }
 
 #planet-name {
-  margin-top: 10px;
   margin-bottom: 30px;
   text-align: center;
-  color: white;
+  color: blue;
   text-shadow: none;
-  font-size: 40px;
+  font-size: 70px;
   font-weight: bold;
 }
+
+#fa-meteor-show {
+  font-size: 40px;
+}
+
+.fa-map-marker-alt, .fa-cloud-sun, .fa-file-alt{
+  margin-right: 10px;
+}
+
+.bottom-separation {
+  text-align: left;
+}
+
+#last {
+  text-align: left;
+  margin-left: -20px;
+}
+
+

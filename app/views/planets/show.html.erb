@@ -23,6 +23,7 @@
   </a>
 </div>
 
+
 <div class="show-container">
   <div class="d-flex justify-content-center planet-head">
     <h1 id='planet-name'><%= @planet.name %></h1>
@@ -32,27 +33,25 @@
   <div class="row">
     <div class="col-8">
       <div class="planet-infos">
+        <h1 id='planet-name'><%= @planet.name %></h1>
         <div class="category bottom-separation">
-          <h3><i class="far fa-file-alt"></i> Description:</h3>
-          <p><%= simple_format(@planet.description) %></p>
-          <p></p>
-        </div>
-        <div class="category bottom-separation">
+          <h3><i class="fas fa-map-marker-alt"></i> Price per day</h3>
+          <p id="price"><%= @planet.price %></p>
           <h3><i class="fas fa-map-marker-alt"></i> Stellar Coordinates:</h3>
           <p><%= @planet.stellar_coordinates %></p>
-        </div>
-        <div class="category bottom-separation">
-          <h3><i class="fas fa-cloud-sun"></i> Weather:</h3>
+          <h3><i class="fas fa-cloud-sun"></i> Weather</h3>
           <p><%= @planet.weather %></p>
         </div>
         <div class="category bottom-separation">
-          <h3>Add a review:</h3>
-          <div class="form-container">
-            <%= render 'shared/review_form', planet: @planet, review: @review %>
-          </div>
+          <h3><i class="far fa-file-alt"></i> Description</h3>
+          <p><%= simple_format(@planet.description) %></p>
           <p></p>
         </div>
-        <div class="category">
+      <!--   <div class="category bottom-separation">
+          <h3><i class="fas fa-dice"></i> Activities:</h3>
+          <p><%= @planet.activities %></p>
+        </div> -->
+        <div class="category bottom-separation">
           <h3>All reviews</h3>
           <% @reviews.each do |review| %>
             <div class="review mb-2">
@@ -80,6 +79,14 @@
               </div>
             </div>
           <% end %>
+          </div>
+
+          <div id="last" class="category">
+          <h3>Add a review</h3>
+          <div class="form-container">
+            <%= render 'shared/review_form', planet: @planet, review: @review %>
+          </div>
+          <p></p>
         </div>
       </div>
     </div>
@@ -87,6 +94,7 @@
     <div class="col-4">
       <div class="booking-card">
         <h2>Book this planet</h2>
+        <%= render 'shared/rating_stars', rating: @average_rating %>
         <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
           <%= render 'shared/booking_form', planet: @planet, booking: @booking %>
         </div>
