@@ -1,9 +1,19 @@
 .banner {
   height: 100%;
-  background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://wallpaperaccess.com/full/84303.jpg);
-  padding: 15%;
-  background-position: center;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)), url(https://wallpaperstock.net/wallpapers/thumbs1/42093wide.jpg);
+  padding: 20%;
+  -moz-text-align-last: center;
   text-align-last: center;
+  margin-bottom: -30px;
+  border-bottom: solid 1px rgba(250, 250, 250, 0.5)
+}
+
+.banner h1 {
+  text-align: center;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 120px;
+  font-weight: bold;
 }
 
 .parallax {
@@ -14,109 +24,54 @@
   background-size: cover;
 }
 
-/*.search_bar {
+.container-main{
+  padding: 28px;
+}
+
+.container-btn {
   display: flex;
+  justify-content: center;
   align-content: center;
+  text-decoration: none;
 }
 
-.search_bar form {
-}*/
-
-.search_bar input {
-  text-align-last: center;
-  padding:         5px;
-  border-radius:   5px;
-  border:          none;
-  width:           230px;
-
+#search-bar {
+  font-size: 40px;
 }
 
-body
-{
-    background: #000;
-    font-family:Arial, Helvetica;
-    font-size:12px;
-    color:#fff;
+#search {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid rgba(250, 250, 250, 0.5);
+  padding: 5px;
 }
 
-footer{
-    position:fixed;
-    bottom: 20px;
-    font-family:Arial, Helvetica;
-    font-size:12px;
-    color:#fff;
+
+#btn-search{
+  color: black;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid rgba(250, 250, 250, 0.5);
+  border-radius: 5px;
+  flex: auto;
+  margin: 5px 5px 5px 0;
+  font-weight: semi-bold;
 }
 
-footer img{margin-left:20px;}
-footer span{position: relative;
-    bottom: 4px; }
-a{text-decoration:none; color:#ffff;}
-
-
-.center-con {
-    display: flex;
-    height: 20vh;
-    align-items: center;
-    justify-content: center;
+#btn-search-planet{
+  text-decoration: none !important;
+  color: black;
+  background-color: white;
+  padding: 5px;
+  border: 1px solid rgba(250, 250, 250, 0.5);
+  border-radius: 5px;
+  flex: auto;
+  margin: 5px 0 5px 5px;
+  font-weight: semi-bold;
 }
 
-.round {
-  position:      absolute;
-  border:        2px solid #fff;
-  width:         50px;
-  height:        50px;
-  border-radius: 100%;
-  transform:     rotate(90deg);
-}
-
-#cta{
-    width:100%; cursor: pointer; position: absolute;
-}
-
-#cta:hover{
-  margin-bottom: -15px;
-  transition:    ease;
-}
-
-#cta .arrow{left: 30%;}
-.arrow {position: absolute; bottom: 0;  margin-left:0px; width: 12px; height: 12px; background-size: contain; top:15px;}
-.segunda{margin-left: 8px;}
-.next {
-  background-image: url(data:image/svg+xml;base64,PHN2ZyBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHN0eWxlPi5zdDB7ZmlsbDojZmZmfTwvc3R5bGU+PHBhdGggY2xhc3M9InN0MCIgZD0iTTMxOS4xIDIxN2MyMC4yIDIwLjIgMTkuOSA1My4yLS42IDczLjdzLTUzLjUgMjAuOC03My43LjZsLTE5MC0xOTBjLTIwLjEtMjAuMi0xOS44LTUzLjIuNy03My43UzEwOSA2LjggMTI5LjEgMjdsMTkwIDE5MHoiLz48cGF0aCBjbGFzcz0ic3QwIiBkPSJNMzE5LjEgMjkwLjVjMjAuMi0yMC4yIDE5LjktNTMuMi0uNi03My43cy01My41LTIwLjgtNzMuNy0uNmwtMTkwIDE5MGMtMjAuMiAyMC4yLTE5LjkgNTMuMi42IDczLjdzNTMuNSAyMC44IDczLjcuNmwxOTAtMTkweiIvPjwvc3ZnPg==);
-}
-
-@keyframes bounceAlpha {
-  0% {opacity: 1; transform: translateX(0px) scale(1);}
-  25%{opacity: 0; transform:translateX(10px) scale(0.9);}
-  26%{opacity: 0; transform:translateX(-10px) scale(0.9);}
-  55% {opacity: 1; transform: translateX(0px) scale(1);}
-}
-
-.bounceAlpha {
-    animation-name: bounceAlpha;
-    animation-duration:1.4s;
-    animation-iteration-count:infinite;
-    animation-timing-function:linear;
-}
-
-.arrow.primera.bounceAlpha {
-    animation-name: bounceAlpha;
-    animation-duration:1.4s;
-    animation-delay:0.2s;
-    animation-iteration-count:infinite;
-    animation-timing-function:linear;
-}
-
-.round:hover .arrow{
-    animation-name: bounceAlpha;
-    animation-duration:1.4s;
-    animation-iteration-count:infinite;
-    animation-timing-function:linear;
-}
-.round:hover .arrow.primera{
-    animation-name: bounceAlpha;
-    animation-duration:1.4s;
-    animation-delay:0.2s;
-    animation-iteration-count:infinite;
-    animation-timing-function:linear;
+#btn-search:hover , #btn-search-planet:hover {
+  transition: 0.5s;
+  background-color: transparent;
+  color: white;
 }
