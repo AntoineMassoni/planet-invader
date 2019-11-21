@@ -2,6 +2,7 @@
   background: #000000;
   color: white;
   display: flex;
+  text-decoration: none;
   align-items: center;
   justify-content: space-between;
   height: 80px;
@@ -9,14 +10,12 @@
   font-size: 20px;
   font-size: semi-bold;
   margin-top: -17px;
+  border-bottom: solid 1px rgba(250, 250, 250, 0.5)
 }
 
 .nav-lewagon a {
-  text-decoration: none;
-}
-
-.navbar-nav mr-auto {
   color: white;
+  text-decoration: none;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -29,4 +28,14 @@
 
 .navbar-link {
   color: white;
+}
+
+.fa-space-shuttle {
+  font-size: 40px;
+  transform: rotate(330deg);
+  color: white;
+}
+
+.fa-space-shuttle:hover {
+  color: rgba(255, 255, 255, 0.5);
 }

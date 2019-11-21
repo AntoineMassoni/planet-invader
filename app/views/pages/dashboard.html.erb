@@ -1,78 +1,83 @@
-
-  <div class="dashboard-container">
-    <h1>Dashboard</h1>
-     <div class="separator">
-        <div class="wrapper"></div>
-      </div>
-      <div class="container-title">
-        <h2>My infos</h2>
-        <h2>My Planets</h2>
-        <h2>My bookings</h2>
-      </div>
-    <div class="row">
-      <div class="col-3 pl-1 pr-1">
-        <div class="card-product-side">
-              <div class="ml-2 ">
-                <div>
-                  <h4>Hello, <%=current_user.first_name %> <%= current_user.last_name %>!</h4>
-                  <p><strong>Your phone number:</strong> <%= current_user.phone_number %></p>
-                  <div>
-                    <p><strong>Your email:</strong> <%= current_user.email %></p>
-                  </div>
-
-                </div>
-                <div>
-                  <p>Change password</p>
-                </div>
-
-              </div>
-
-        </div>
-      </div>
-
-      <div class="col-6 pl-1 pr-1">
-        <div class="dashboard-card">
-          <% current_user.planets.each do |planet| %>
-          <%= link_to planet_path(planet) do %>
-            <div class="card-product">
-              <%= cl_image_tag planet.planet_pictures.first.photo %>
-              <div class="ml-2">
-                <h3><%= planet.name %></h3>
-                <div>Local population : <%= planet.local_population %></div>
-                <div>Planet activities : <%= planet.activities %></div>
-                <div>Stellar coordinates : <%= planet.stellar_coordinates %></div>
-                <div>Price : <%= planet.price%></div>
-                <div>Capacity : <%= planet.capacity%></div>
-                <div>Weather : <%= planet.weather%></div>
-                <div>
-                  <% planet.bookings.each do |booking|%>
-                  <div>Booked from : <%= booking.check_in %></div>
-                  <div>To : <%= booking.check_out %></div>
-                  <div>Number of travelers : <%= booking.travelers %></div>
-                  <% end %>
-
-                </div>
-              </div>
+<div class="dashboard-container">
+  <h1>Dashboard</h1>
+  <div class="separator">
+    <div class="wrapper"></div>
+  </div>
+  <div class="container-title">
+    <h2>My infos</h2>
+    <h2>My Planets</h2>
+    <h2>My bookings</h2>
+  </div>
+  <div class="row">
+    <div class="col-3 pl-1 pr-1">
+      <div class="card-product-side">
+        <div class="ml-2 ">
+          <div>
+            <h4>Hello, <%=current_user.first_name %> <%= current_user.last_name %>!</h4>
+            <p><strong>Your phone number:</strong> <%= current_user.phone_number %></p>
+            <div>
+              <p><strong>Your email:</strong> <%= current_user.email %></p>
             </div>
-            <% end %>
-          <% end %>
-        </div>
-        <a class="btn" href="planets/new">Add a planet</a>
-      </div>
-
-      <div class="col-3 pl-1 pr-1">
-        <div class="card-product-side">
-            <% current_user.bookings.each do |booking| %>
-              <div class="bookings">
-                <div><strong>Visiting:</strong> <%= booking.planet.name %></div>
-                <div><strong>from:</strong> <%= booking.check_in %></div>
-                <div><strong>to:</strong> <%= booking.check_out %></div>
-                <div><strong>people:</strong> <%= booking.travelers %> travelers</div>
-              </div>
-            <% end %>
+          </div>
+          <div>
+            <p>Change password</p>
+          </div>
         </div>
       </div>
     </div>
+    <div class="col-6 pl-1 pr-1">
+      <div class="dashboard-card">
+        <% current_user.planets.each do |planet| %>
+        <%= link_to planet_path(planet) do %>
+        <div class="card-product">
+          <%= cl_image_tag planet.planet_pictures.first.photo %>
+          <div class="ml-2">
+            <h3><%= planet.name %></h3>
+            <div>Stellar coordinates : <%= planet.stellar_coordinates %></div>
+            <div>Price : <%= planet.price%></div>
+            <div>Capacity : <%= planet.capacity%></div>
+            <div>Weather : <%= planet.weather%></div>
+            <div>
+              <% planet.bookings.each do |booking|%>
+              <div>Booked from : <%= booking.check_in %></div>
+              <div>To : <%= booking.check_out %></div>
+              <div>Number of travelers : <%= booking.travelers %></div>
+              <% end %>
+
+
+            </div>
+          </div>
+        </div>
+              <div class="dashboard-card-actions">
+                <%= link_to 'Modify a planet', edit_planet_path(planet), class: 'btn btn-warning' %>
+                <%= link_to "Obliterate a planet", planet_path(planet),
+                method: :delete,
+                data: { confirm: "really?" },
+                class: 'ml-3 btn btn-danger'
+                %>
+              </div>
+        <% end %>
+        <% end %>
+      </div>
+
+
+      <div class="container">
+      <%= link_to 'add a new planet', new_planet_path, class: 'btn btn-warning' %>
+      </div>
+
+
+    </div>
+    <div class="col-3 pl-1 pr-1">
+      <div class="card-product-side">
+        <% current_user.bookings.each do |booking| %>
+        <div class="bookings">
+          <div><strong>Visiting:</strong> <%= booking.planet.name %></div>
+          <div><strong>from:</strong> <%= booking.check_in %></div>
+          <div><strong>to:</strong> <%= booking.check_out %></div>
+          <div><strong>people:</strong> <%= booking.travelers %> travelers</div>
+        </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-
+</div>

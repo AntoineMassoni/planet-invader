@@ -3,7 +3,9 @@
     <div class="col-12">
       <h1>Check out the planets</h1>
     </div>
+    <% if @message.present? %>
+      <div><%= @message %></div>
+    <% end %>
   </div>
   <%= render 'shared/card' %>
-
 </div>
