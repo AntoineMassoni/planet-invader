@@ -3,67 +3,66 @@
   <div class="separator">
     <div class="wrapper"></div>
   </div>
-  <div class="container-title">
-    <h2>My infos</h2>
+<!-- <div class="row">
+    <div class="container-title">
     <h2>My Planets</h2>
+    <h2>My infos</h2>
     <h2>My bookings</h2>
+  </div> -->
   </div>
+
   <div class="row">
-    <div class="col-3 pl-1 pr-1">
-      <div class="card-product-side">
-        <div class="ml-2 ">
-          <div>
-            <h4>Hello, <%=current_user.first_name %> <%= current_user.last_name %>!</h4>
-            <p><strong>Your phone number:</strong> <%= current_user.phone_number %></p>
-            <div>
-              <p><strong>Your email:</strong> <%= current_user.email %></p>
-            </div>
-          </div>
-          <div>
-            <p>Change password</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="col-6 pl-1 pr-1">
-      <div class="dashboard-card">
+    <div class="col-8 pl-1 pr-1">
+      <div class=" d-flex justify-content-around ">
+
         <% current_user.planets.each do |planet| %>
         <%= link_to planet_path(planet) do %>
-        <div class="card-product">
+        <div class="planet_card">
           <%= cl_image_tag planet.planet_pictures.first.photo %>
-          <div class="ml-2">
-            <h3><%= planet.name %></h3>
-            <div>Stellar coordinates : <%= planet.stellar_coordinates %></div>
-            <div>Price : <%= planet.price%></div>
-            <div>Capacity : <%= planet.capacity%></div>
-            <div>Weather : <%= planet.weather%></div>
+          <div class="planet_body">
+            <div class="planet_name"><%= planet.name %></div>
+            <div class="planet_description">
+              <%= simple_format(planet.description.first(150)) %>
+            </div>
             <div>
-              <% planet.bookings.each do |booking|%>
-              <div>Booked from : <%= booking.check_in %></div>
-              <div>To : <%= booking.check_out %></div>
-              <div>Number of travelers : <%= booking.travelers %></div>
+              <%= link_to edit_planet_path(planet) do %>
+                <i class="fas fa-edit"></i>
+                <% end %>
+              <%= link_to planet_path(planet), method: :delete, data: { confirm: 'Are you sure?' } do %>
+                <i class="fas fa-dumpster-fire"></i>
               <% end %>
+            </div>
+          </div>
 
+          <div class="planet_infos d-flex justify-content-around">
+            <div class="one-third">
+              <div class="stat"><%= planet.price %>€</div>
+              <div class="stat-value">Per day</div>
+            </div>
 
+            <div class="separation-around">
+            </div>
+
+            <div class="one-third">
+              <div class="stat"><%= planet.capacity %></div>
+              <div class="stat-value">Travelers</div>
+            </div>
+
+            <div class="separation-around">
+            </div>
+
+            <div class="one-third no-border">
+              <div class="stat"><%= planet.average_rating %></div>
+              <div class="stat-value">Rating</div>
             </div>
           </div>
         </div>
-              <div class="dashboard-card-actions">
-                <%= link_to 'Modify a planet', edit_planet_path(planet), class: 'btn btn-warning' %>
-                <%= link_to "Obliterate a planet", planet_path(planet),
-                method: :delete,
-                data: { confirm: "really?" },
-                class: 'ml-3 btn btn-danger'
-                %>
-              </div>
         <% end %>
         <% end %>
       </div>
 
 
-      <div class="container">
-      <%= link_to 'add a new planet', new_planet_path, class: 'btn btn-warning' %>
-      </div>
+
 
 
     </div>
@@ -81,3 +80,8 @@
     </div>
   </div>
 </div>
+  <div class="container">
+      <%= link_to 'add a new planet', new_planet_path, class: 'btn btn-warning' %>
+      </div>
+
+z
