@@ -28,7 +28,10 @@
   <div class="row">
     <div class="col-8">
       <div class="planet-infos">
-        <h1 id='planet-name'><%= @planet.name %></h1>
+        <div class="container-title-show">
+          <h1 id='planet-name'><%= @planet.name %></h1>
+          <img class="avatar-show" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" alt="avatar-show">
+        </div>
         <div class="category bottom-separation">
           <h3><i class="fab fa-ethereum"></i> Price per day</h3>
           <p id="price"><%= @planet.price %></p>
