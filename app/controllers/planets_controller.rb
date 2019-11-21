@@ -49,7 +49,7 @@ class PlanetsController < ApplicationController
   end
 
   def update
-    planet.update(planet_params)
+    @planet.update(planet_params)
     redirect_to planet_path(@planet)
   end
 
