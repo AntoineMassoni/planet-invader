@@ -21,8 +21,12 @@ gem 'faker', '~> 1.4', '>= 1.4.3'
 # gem devise
 gem 'devise'
 
-#gem searchkick
-gem 'searchkick', '~> 3.0'
+
+# search
+gem 'pg_search', '~> 2.3.0'
+
+# #gem searchkick
+# gem 'searchkick', '~> 3.0'
 
 # gem cloudinary
 gem 'cloudinary'
