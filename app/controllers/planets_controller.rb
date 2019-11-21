@@ -63,7 +63,7 @@ class PlanetsController < ApplicationController
     @planet.user = current_user
     if @planet.save
       create_pictures
-      redirect_to dashboard_path
+      redirect_to planet_path(@planet)
     else
       render :new
     end
