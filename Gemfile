@@ -38,6 +38,9 @@ gem 'carrierwave'
 # searchkick
 gem 'searchkick', '~> 3.0'
 
+# pundit
+gem 'pundit'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
