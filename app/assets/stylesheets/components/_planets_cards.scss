@@ -1,11 +1,18 @@
 .planet_card {
   background-color: white;
   border-radius: 15px;
-  // height: 100%;
   margin-bottom: 20px;
   min-height: 540px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
   flex-direction: column;
+  -webkit-box-pack: justify;
   justify-content: space-between;
+  border: solid 0.5px lightgrey;
+}
+
+.show-container a:hover{
+  text-decoration: none;
 }
 
 .planet_card img {
@@ -20,17 +27,27 @@
   color: #2b2d42;
   font-weight: bold;
   font-size: 25px;
+  text-align: center;
 }
 
-.planet_name, .planet_description {
-  text-align: center;
-  padding: 15px;
+.planet_body {
+  height: 200px;
+}
+
+#container-bloc-text {
+  display: flex;
+}
+
+#container-bloc-text .btn {
+  margin-left: auto;
 }
 
 .planet_description {
   color: black;
   font-size: 16px;
   // height: 150px;
+  text-align: center;
+  padding: 5px;
 }
 
 .planet_infos {

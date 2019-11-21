@@ -1,7 +1,17 @@
 <div class="show-container">
   <div class="row">
     <div class="col-12">
-      <h1>Check out the planets</h1>
+      <h1>Search again</h1>
+      <%= form_tag planets_path, method: :get do %>
+      <%= text_field_tag :search,
+        params[:search],
+        placeholder: "Search another planet" %>
+      <% end %>
+    </div>
+    <div class="col-12">
+      <div id="container-bloc-text">
+        <h1>Check out the planets</h1> <%= link_to 'add a new planet', new_planet_path, class: 'btn btn-warning' %>
+      </div>
     </div>
     <% if @message.present? %>
       <div><%= @message %></div>
