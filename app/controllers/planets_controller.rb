@@ -78,9 +78,7 @@ class PlanetsController < ApplicationController
                                    :price,
                                    :capacity,
                                    :stellar_coordinates,
-                                   :activities,
                                    :weather,
-                                   :local_population,
                                    :user)
   end
 
@@ -89,6 +87,6 @@ class PlanetsController < ApplicationController
 
     @reviews.each { |review| average_rating += review.rating }
 
-    average_rating = average_rating / @reviews.length
+    average_rating /= @reviews.length
   end
 end
