@@ -33,10 +33,6 @@
     <div class="col-8">
       <div class="planet-infos">
         <div class="category bottom-separation">
-          <h3><i class="fab fa-reddit-alien"></i> Local Population:</h3>
-          <p><%= @planet.local_population %></p>
-        </div>
-        <div class="category bottom-separation">
           <h3><i class="far fa-file-alt"></i> Description:</h3>
           <p><%= simple_format(@planet.description) %></p>
           <p></p>
@@ -44,10 +40,6 @@
         <div class="category bottom-separation">
           <h3><i class="fas fa-map-marker-alt"></i> Stellar Coordinates:</h3>
           <p><%= @planet.stellar_coordinates %></p>
-        </div>
-        <div class="category bottom-separation">
-          <h3><i class="fas fa-dice"></i> Activities:</h3>
-          <p><%= @planet.activities %></p>
         </div>
         <div class="category bottom-separation">
           <h3><i class="fas fa-cloud-sun"></i> Weather:</h3>
