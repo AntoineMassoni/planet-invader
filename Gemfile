@@ -21,6 +21,9 @@ gem 'faker', '~> 1.4', '>= 1.4.3'
 # gem devise
 gem 'devise'
 
+#gem searchkick
+gem 'searchkick', '~> 3.0'
+
 # gem cloudinary
 gem 'cloudinary'
 
@@ -29,6 +32,9 @@ gem 'dotenv-rails', groups: [:development, :test]
 
 # carrierwave
 gem 'carrierwave'
+
+# searchkick
+gem 'searchkick', '~> 3.0'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

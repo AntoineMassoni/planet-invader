@@ -3,8 +3,9 @@
     <h1>Planet Invaders</h1>
     <div class="container-search-block">
       <div id="search-bar" placeholder="Try « Coruscant »">
-        <%= form_tag search_path, method: :get do %>
-          <%= text_field_tag :search %>
+        <%= form_tag planets_path, method: :get do %>
+          <%= text_field_tag :search,
+            params[:search] %>
           <div class="container-btn">
             <%= submit_tag 'Search', name: nil, id: "btn-search" %>
             <%= link_to "All planets", planets_path, id: "btn-search-planet" %>
@@ -14,5 +15,3 @@
     </div>
   </div>
 </div>
-
-

@@ -1,30 +1,39 @@
- <div class="row">
-    <% @planets.first(3).each do |planet| %>
-    <div class="col-xs-4 col-sm-12 col-md-6 col-lg-4">
+<div class="row">
+  <% @planets.each do |planet| %>
+    <div class="col-xs-12 col-md-6 col-lg-3">
       <%= link_to planet_path(planet[:id]) do %>
-      <div class="planet-card">
-        <div class="planet-card-image">
+        <div class="planet_card d-flex">
           <%= cl_image_tag planet.planet_pictures.first.photo %>
-        </div>
-        <div class="planet-card-content">
-          <div class="planet-card-title">
-            <h4><%= planet.name %></h4>
+          <div class=""></div>
+          <div class="planet_name"><%= planet.name %></div>
+          <div class="planet_description">
+            <%= simple_format(planet.description.first(150)) %>
           </div>
-          <p>Coordinates <%= planet.stellar_coordinates %></p>
-          <div class="flex">
-            <div class="flex">
-              <h4><%= planet.capacity %> <i class="fas fa-user-astronaut"></i></h4>
+
+          <div class="planet_infos d-flex justify-content-around">
+            <div class="one-third">
+              <div class="stat"><%= planet.price %>€</div>
+              <div class="stat-value">Per day</div>
             </div>
-            <div class="flex ml-3">
-              <h4><%= planet.price %><i class="far fa-gem"></i></h4>
+
+            <div class="separation-around">
+            </div>
+
+            <div class="one-third">
+              <div class="stat"><%= planet.capacity %></div>
+              <div class="stat-value">Travelers</div>
+            </div>
+
+            <div class="separation-around">
+            </div>
+
+            <div class="one-third no-border">
+              <div class="stat"><%= planet.average_rating %></div>
+              <div class="stat-value">Rating</div>
             </div>
           </div>
         </div>
-        <div class="planet-card-actions">
-          <p></p>
-        </div>
-      </div>
       <% end %>
     </div>
-    <% end %>
-  </div>
+  <% end %>
+</div>

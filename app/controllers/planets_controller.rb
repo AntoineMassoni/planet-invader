@@ -8,31 +8,15 @@ class PlanetsController < ApplicationController
   end
 
   def index
-    @planets = Planet.all
-  end
-
-  def search
-    @planets = Planet.where(name: params[:search].capitalize)
-    if @planets == []
-      @planets = Planet.where(price: params[:search].capitalize)
-    elsif @planets == []
-      @planets = Planet.where(capacity: params[:search].capitalize)
-    elsif @planets == []
-      @planets = Planet.where(stellar_coordinates: params[:search].capitalize)
-    elsif @planets == []
-      @planets = Planet.where(activities: params[:search].capitalize)
-    elsif @planets == []
-      @planets = Planet.where(weather: params[:search].capitalize)
-    elsif @planets == []
-      @planets = Planet.where(local_population: params[:search].capitalize)
+    if params[:search].present?
+      @planets = Planet.search(params[:search])
+      if @planets.size == 0
+        @message = "Pas de résultat pour #{params[:search]}"
+        @planets = Planet.all
+      end
+    else
+      @planets = Planet.all
     end
-
-    # raise
-
-    @planet = @planets.first
-
-    # redirect_to
-    redirect_to planet_path(@planet)
   end
 
   def show
@@ -40,11 +24,6 @@ class PlanetsController < ApplicationController
     @booking = Booking.new
     @review = Review.new
     @reviews = Review.where(planet_id: @planet.id)
-    @average_rating = if @reviews.length.zero?
-                        0
-                      else
-                        average_calcul
-                      end
     @bookings = @planet.next_bookings
     @bookings_dates = @bookings.map do |booking|
       {
@@ -62,9 +41,8 @@ class PlanetsController < ApplicationController
     @planet = Planet.new(planet_params)
     @planet.user = current_user
     if @planet.save
-
       create_pictures
-      redirect_to planets_path
+      redirect_to planet_path(@planet)
     else
       render :new
     end
@@ -99,17 +77,7 @@ class PlanetsController < ApplicationController
                                    :price,
                                    :capacity,
                                    :stellar_coordinates,
-                                   :activities,
                                    :weather,
-                                   :local_population,
                                    :user)
-  end
-
-  def average_calcul
-    average_rating = 0
-
-    @reviews.each { |review| average_rating += review.rating }
-
-    average_rating = average_rating / @reviews.length
   end
 end

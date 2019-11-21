@@ -63,10 +63,7 @@ Planet.create!(
   price: 99,
   capacity: 2,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
-  activities: 'go mining!',
   weather: 'hot!',
-  local_population: Faker::Movies::StarWars.specie,
-  # remote_photo_url: 'https://vignette.wikia.nocookie.net/starwars/images/6/66/Abafar-ASDitV.png/revision/latest?',
   user: first_user
 )
 
@@ -81,10 +78,7 @@ Planet.create!(
   price: 56,
   capacity: 3,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
-  activities: 'pick up salt and dream',
   weather: Faker::Music.chord,
-  local_population: Faker::Movies::StarWars.specie,
-  # remote_photo_url: 'https://i.pinimg.com/originals/94/1b/a0/941ba0698464c77179782cbeda53ad6f.jpg',
   user: first_user
 )
 
@@ -99,10 +93,7 @@ Planet.create!(
   price: 50,
   capacity: 3,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
-  activities: 'nothing... because it does not exist',
   weather: 'cold',
-  local_population: Faker::Movies::StarWars.specie,
-  # remote_photo_url: 'https://lumiere-a.akamaihd.net/v1/images/1-alderaan-bio-1_copy_d2ef86c5.jpeg?',
   user: second_user
 )
 
@@ -117,10 +108,7 @@ Planet.create!(
   price: 850,
   capacity: 2,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
-  activities: 'vosit the senate and learn politics',
   weather: 'seasonal',
-  local_population: Faker::Movies::StarWars.specie,
-  # remote_photo_url: 'https://vignette.wikia.nocookie.net/starwars/images/1/16/Coruscant-EotE.jpg/revision/latest?',
   user: third_user
 )
 
@@ -135,10 +123,7 @@ Planet.create!(
   price: 150,
   capacity: 4,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
-  activities: 'learn the ways of the Jedi',
   weather: Faker::Music.chord,
-  local_population: Faker::Movies::StarWars.specie,
-  # remote_photo_url: 'https://lumiere-a.akamaihd.net/v1/images/dagobah-2-retina_92180bd1.jpeg?',
   user: third_user
 )
 
@@ -153,10 +138,7 @@ Planet.create!(
   price: 200,
   capacity: 2,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
-  activities: 'acrobranche',
   weather: 'tropical and humid',
-  local_population: Faker::Movies::StarWars.specie,
-  # remote_photo_url: 'https://vignette.wikia.nocookie.net/starwars/images/1/1d/Endor_BF2.png/revision/latest?',
   user: fourth_user
 )
 
@@ -171,10 +153,7 @@ Planet.create!(
   price: 30,
   capacity: 2,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
-  activities: 'create snowmen and have snow fights',
   weather: 'very cold!',
-  local_population: Faker::Movies::StarWars.specie,
-  # remote_photo_url: 'https://vignette.wikia.nocookie.net/starwars/images/8/81/Hoth_AoRCR.png/revision/latest?',
   user: fourth_user
 )
 
@@ -189,10 +168,7 @@ Planet.create!(
   price: 150,
   capacity: 3,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
-  activities: 'gather metal',
   weather: 'warm',
-  local_population: Faker::Movies::StarWars.specie,
-  # remote_photo_url: 'https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/5087ce2d-012d-4a01-be04-27c944009d25/d9qehex-3f6c919e-be89-48b5-893d-4023d64d2f5f.png/v1/fill/w_1024,h_576,q_80,strp/jakku_planet_postprod_by_sambishop10_d9qehex-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTc2IiwicGF0aCI6IlwvZlwvNTA4N2NlMmQtMDEyZC00YTAxLWJlMDQtMjdjOTQ0MDA5ZDI1XC9kOXFlaGV4LTNmNmM5MTllLWJlODktNDhiNS04OTNkLTQwMjNkNjRkMmY1Zi5wbmciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.F0dSXwZP0TYeC1PC7PfPBA-9uusiLHijdacuLfYGcIU',
   user: fifth_user
 )
 
@@ -207,10 +183,7 @@ Planet.create!(
   price: 80,
   capacity: 2,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
-  activities: 'dance with the locals',
   weather: 'warm during winter and cold in the summer',
-  local_population: Faker::Movies::StarWars.specie,
-  # remote_photo_url: 'https://vignette.wikia.nocookie.net/foceunleashed/images/0/01/Kashyyyk.jpg/revision/latest?',
   user: first_user
 )
 
@@ -225,10 +198,7 @@ Planet.create!(
   price: 100,
   capacity: 2,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
-  activities: 'learn to steal',
   weather: 'cold!',
-  local_population: Faker::Movies::StarWars.specie,
-  # remote_photo_url: 'https://i.pinimg.com/originals/9c/9d/b2/9c9db27ec0e9850eb0f0590653e5ef93.png',
   user: third_user
 )
 
