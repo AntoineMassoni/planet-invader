@@ -13,7 +13,6 @@ class Planet < ApplicationRecord
     Booking.where("planet_id = ? AND check_out > ?", self.id, Date.today)
   end
 
-  searchkick
 
   def average_rating
     average_rating = 0
