@@ -88,7 +88,7 @@ Planet.create!(
   capacity: 2,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
   weather: 'hot!',
-  user: first_user
+  user: fifth_user
 )
 
 PlanetPicture.create!(
@@ -132,7 +132,7 @@ Planet.create!(
   capacity: 3,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
   weather: 'cold',
-  user: second_user
+  user: fifth_user
 )
 
 PlanetPicture.create!(
