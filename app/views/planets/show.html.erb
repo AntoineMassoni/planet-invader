@@ -28,7 +28,7 @@
       <div class="planet-infos">
         <div class="container-title-show">
           <h1 id='planet-name'><%= @planet.name %></h1>
-          <%= cl_image_tag(@planet.user.user_pictures.first.photo, class: "avatar-index", data: { toggle: "dropdown" } , :transformation=>[{:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},{:width=>200, :crop=>"scale"}])%>
+          <%= cl_image_tag(@planet.user.user_pictures.first.photo, class: "avatar-show", data: { toggle: "dropdown" } , :transformation=>[{:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},{:width=>200, :crop=>"scale"}])%>
         </div>
         <hr>
         <div class="category bottom-separation">
