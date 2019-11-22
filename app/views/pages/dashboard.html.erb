@@ -49,11 +49,11 @@
           </div>
         </div>
               <div class="dashboard-card-actions">
-                <%= link_to 'Modify a planet', edit_planet_path(planet), class: 'btn btn-warning' %>
+                <%= link_to 'Modify a planet', edit_planet_path(planet), class: 'button' %>
                 <%= link_to "Obliterate a planet", planet_path(planet),
                 method: :delete,
                 data: { confirm: "really?" },
-                class: 'ml-3 btn btn-danger'
+                class: 'ml-3 button'
                 %>
               </div>
         <% end %>
@@ -62,7 +62,7 @@
 
 
       <div class="container">
-      <%= link_to 'add a new planet', new_planet_path, class: 'btn btn-warning' %>
+      <%= link_to 'add a new planet', new_planet_path, class: 'button' %>
       </div>
 
 
