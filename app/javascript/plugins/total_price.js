@@ -7,6 +7,9 @@ let endDate = 0;
 const price = Number.parseInt(document.getElementById("price").innerText);
 const new_price = document.getElementById("total-price");
 
+
+
+
 checkIn.addEventListener("change", (event) => {
   total_milliseonde = Date.parse(checkOut.value) - Date.parse(checkIn.value);
   let total_days = (total_milliseonde / 86400000);

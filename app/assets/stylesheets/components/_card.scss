@@ -12,18 +12,19 @@
 }
 
 .card-product-side {
-  overflow: hidden;
-  height: 200px;
+  display: block;
+  overflow: auto;
+  min-height: 500px;
   padding: 30px;
   background: white;
   color: black;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-  display: -webkit-box;
+  // display: -webkit-box;
   border-radius: 5px;
   margin-top: 10px;
-  position: -webkit-sticky;
-  position: sticky;
-  top: 80px;
+  // position: -webkit-sticky;
+  // position: sticky;
+  // top: 80px;
 }
 
 
