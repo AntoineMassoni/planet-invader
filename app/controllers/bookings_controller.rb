@@ -9,19 +9,21 @@ class BookingsController < ApplicationController
 
   def new
     @booking = Booking.new
+    authorize @booking
   end
 
   def create
     @booking = Booking.new(booking_params)
     @booking.user = current_user
     @booking.planet = @planet
-    @booking.save
-    redirect_to planet_path(@planet)
+    authorize @booking
     if @booking.save
-      flash[:alert] = "Planet booked"
+      # redirect_to planet_path(@planet)
+      redirect_to '/dashboard'
     else
-      flash[:alert] = "Planet not booked"
+      render 'planets/show'
     end
+
   end
 
   def edit
