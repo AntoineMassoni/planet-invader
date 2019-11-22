@@ -29,6 +29,7 @@
     <div class="col-8">
       <div class="planet-infos">
         <div class="container-title-show">
+          <div class="seperator">
           <h1 id='planet-name'><%= @planet.name %></h1>
           <img class="avatar-show" src="<%= current_user.user_pictures.first.photo %>" alt="avatar-show">
         </div>
@@ -101,8 +102,8 @@
           <h2>My planet</h2>
           <%= render 'shared/rating_stars', rating: @planet.average_rating %>
           <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
-            <%= link_to 'Edit planet', edit_planet_path(@planet), class: 'btn btn-danger ml-2' %>
-            <%= link_to "Delete planet", planet_path(@planet), class: 'btn btn-danger ml-2' %>
+            <%= link_to 'Edit planet', edit_planet_path(@planet), class: 'button ml-2' %>
+            <%= link_to "Delete planet", planet_path(@planet), class: 'button ml-2' %>
           </div>
         </div>
       <% else %>

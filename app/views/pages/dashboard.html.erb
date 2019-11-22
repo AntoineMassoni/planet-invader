@@ -13,10 +13,37 @@
 
   <div class="row">
     <div class="col-6 pl-1 pr-1">
-      <div class="dashbord-my-planets d-flex justify-content-center">
-        <h2>My planets</h2>
-        <%= link_to new_planet_path do %>
-          <i class="fa fa-plus-circle add-planet"></i>
+      <div class="dashboard-card">
+        <% current_user.planets.each do |planet| %>
+        <%= link_to planet_path(planet) do %>
+        <div class="card-product">
+          <%= cl_image_tag planet.planet_pictures.first.photo %>
+          <div class="ml-2">
+            <h3><%= planet.name %></h3>
+            <div>Stellar coordinates : <%= planet.stellar_coordinates %></div>
+            <div>Price : <%= planet.price%></div>
+            <div>Capacity : <%= planet.capacity%></div>
+            <div>Weather : <%= planet.weather%></div>
+            <div>
+              <% planet.bookings.each do |booking|%>
+              <div>Booked from : <%= booking.check_in %></div>
+              <div>To : <%= booking.check_out %></div>
+              <div>Number of travelers : <%= booking.travelers %></div>
+              <% end %>
+
+
+            </div>
+          </div>
+        </div>
+              <div class="dashboard-card-actions">
+                <%= link_to 'Modify a planet', edit_planet_path(planet), class: 'button' %>
+                <%= link_to "Obliterate a planet", planet_path(planet),
+                method: :delete,
+                data: { confirm: "really?" },
+                class: 'ml-3 button'
+                %>
+              </div>
+        <% end %>
         <% end %>
       </div>
       <div class=" d-flex justify-content-around ">
@@ -40,8 +67,7 @@
                       <div class="stat"><%= planet.price %>€</div>
                       <div class="stat-value">Per day</div>
                     </div>
-
-                    <div class="separation-around">
+         <div class="separation-around">
                     </div>
 
                     <div class="one-third">
