@@ -2,9 +2,18 @@
 @import "../components/bookingCard";
 @import "../components/reviews";
 
+#container-bloc-text {
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  margin: 30px 0 -70px 0;
+}
+
 .container-title-show {
   display: flex;
   padding: 50px;
+
 }
 
 .show-container {
