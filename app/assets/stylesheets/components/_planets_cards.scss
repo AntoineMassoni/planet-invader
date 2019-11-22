@@ -2,13 +2,13 @@
   background-color: white;
   border-radius: 15px;
   margin-bottom: 20px;
-  min-height: 540px;
+  // min-height: 540px;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   flex-direction: column;
   -webkit-box-pack: justify;
   justify-content: space-between;
-  border: solid 0.5px lightgrey;
+  // border: solid 0.5px lightgrey;
 }
 
 .show-container a:hover{
@@ -47,7 +47,7 @@
   font-family: 'Orbitron', sans-serif;
   color: black;
   font-size: 16px;
-  // height: 150px;
+  min-height: 200px;
   text-align: center;
   padding: 5px;
 }
