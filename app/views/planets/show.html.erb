@@ -2,15 +2,15 @@
   <div class="carousel-inner">
     <% pictures = @planet.planet_pictures %>
     <% pictures.each do |picture| %>
-      <% if picture == @planet.planet_pictures.first %>
-        <div class="carousel-item active">
-          <%= cl_image_tag picture.photo, class: "carousel-img" %>
-        </div>
-      <% else %>
-        <div class="carousel-item">
-          <%= cl_image_tag picture.photo, class: "carousel-img" %>
-        </div>
-      <% end %>
+    <% if picture == @planet.planet_pictures.first %>
+    <div class="carousel-item active">
+      <%= cl_image_tag picture.photo, class: "carousel-img" %>
+    </div>
+    <% else %>
+    <div class="carousel-item">
+      <%= cl_image_tag picture.photo, class: "carousel-img" %>
+    </div>
+    <% end %>
     <% end %>
   </div>
   <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -22,14 +22,13 @@
     <span class="sr-only">Next</span>
   </a>
 </div>
-
 <div class="show-container">
   <div class="row">
     <div class="col-8">
       <div class="planet-infos">
         <div class="container-title-show">
           <h1 id='planet-name'><%= @planet.name %></h1>
-          <img class="avatar-show" src="<%= current_user.user_pictures.first.photo %>" alt="avatar-show">
+          <%= cl_image_tag(@planet.user.user_pictures.first.photo, class: "avatar-index", data: { toggle: "dropdown" } , :transformation=>[{:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},{:width=>200, :crop=>"scale"}])%>
         </div>
         <hr>
         <div class="category bottom-separation">
@@ -48,69 +47,66 @@
         <div class="category bottom-separation">
           <h3>All reviews (<%= @reviews.count %>)</h3>
           <% if @reviews == [] %>
-            <p>No reviews</p>
+          <p>No reviews</p>
           <% else %>
-            <% @reviews.each do |review| %>
-              <div class="review mb-2">
-                <% user = User.find(review.user_id) %>
-                <div class="review-infos d-flex">
-                  <div class="name">
-                    <p><%= user.first_name %> <%= user.last_name %>'s review: </p>
-                  </div>
-                  <div class="rating">
-                    <%= render 'shared/rating_stars', rating: review.rating %>
-                  </div>
-                </div>
-                <div class="review-content d-flex">
-                  <div class="content">
-                    <%= simple_format(review.content) %>
-                  </div>
-                  <div class="user-modif">
-                    <%= link_to edit_review_path(review) do %>
-                      <i class="fas fa-pen"></i>
-                    <% end %>
-                    <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
-                      <i class="fas fa-trash"></i>
-                    <% end %>
-                  </div>
-                </div>
+          <% @reviews.each do |review| %>
+          <div class="review mb-2">
+            <% user = User.find(review.user_id) %>
+            <div class="review-infos d-flex">
+              <div class="name">
+                <p><%= user.first_name %> <%= user.last_name %>'s review: </p>
               </div>
-            <% end %>
+              <div class="rating">
+                <%= render 'shared/rating_stars', rating: review.rating %>
+              </div>
+            </div>
+            <div class="review-content d-flex">
+              <div class="content">
+                <%= simple_format(review.content) %>
+              </div>
+              <div class="user-modif">
+                <%= link_to edit_review_path(review) do %>
+                <i class="fas fa-pen"></i>
+                <% end %>
+                <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+                <i class="fas fa-trash"></i>
+                <% end %>
+              </div>
+            </div>
+          </div>
+          <% end %>
           <% end %>
         </div>
-
         <% if @planet.display_add_review_form(current_user) %>
-          <div id="last" class="category">
-            <h3>Add a review</h3>
-            <div class="form-container">
-              <%= render 'shared/review_form', planet: @planet, review: @review %>
-            </div>
-            <p></p>
+        <div id="last" class="category">
+          <h3>Add a review</h3>
+          <div class="form-container">
+            <%= render 'shared/review_form', planet: @planet, review: @review %>
           </div>
+          <p></p>
+        </div>
         <% end %>
       </div>
     </div>
-
     <div class="col-4">
       <% if current_user.id == @planet.user_id %>
-        <div class="booking-card edit-card">
-          <h2>My planet</h2>
-          <%= render 'shared/rating_stars', rating: @planet.average_rating %>
-          <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
-            <%= link_to 'Edit planet', edit_planet_path(@planet), class: 'button ml-2' %>
-            <%= link_to "Delete planet", planet_path(@planet), class: 'button ml-2' %>
-          </div>
+      <div class="booking-card edit-card">
+        <h2>My planet</h2>
+        <%= render 'shared/rating_stars', rating: @planet.average_rating %>
+        <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
+          <%= link_to 'Edit planet', edit_planet_path(@planet), class: 'button ml-2' %>
+          <%= link_to "Delete planet", planet_path(@planet), class: 'button ml-2' %>
         </div>
+      </div>
       <% else %>
-        <div class="booking-card">
-          <h2>Book this planet</h2>
-          <%= render 'shared/rating_stars', rating: @planet.average_rating %>
-          <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
-            <%= render 'shared/booking_form', planet: @planet, booking: @booking %>
-          </div>
+      <div class="booking-card">
+        <h2>Book this planet</h2>
+        <%= render 'shared/rating_stars', rating: @planet.average_rating %>
+        <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
+          <%= render 'shared/booking_form', planet: @planet, booking: @booking %>
         </div>
+      </div>
       <% end %>
     </div>
   </div>
 </div>
-
