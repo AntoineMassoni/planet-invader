@@ -1,0 +1,27 @@
+body {
+  background-image: url(https://wallpaperaccess.com/full/340541.jpg);
+  background-size: cover;
+}
+
+.button {
+  color: white;
+  background-color: #924cf6;
+  border: solid 1px #924cf6;
+  border-radius: 5px;
+  padding: 10px;
+  font-weight: 600;
+  margin: auto;
+  text-decoration: none;
+  margin: 5px;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+.button:hover {
+  color: white;
+  text-decoration: none;
+  transition: 0.5s;
+  opacity: 0.5;
+}
