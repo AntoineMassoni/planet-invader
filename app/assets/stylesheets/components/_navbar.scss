@@ -19,10 +19,17 @@
   text-decoration: none;
   font-weight: bold;
   font-size: 32px;
+  background-color: black;
 }
 
 .navbar-lewagon a:hover {
-  color: rgba(255, 255, 255, 0.5)
+  color: #924cf6;
+  opacity: 0.5;
+}
+
+.navbar-lewagon .fas:hover {
+  color: #924cf6;
+  opacity: 0.5;
 }
 
 .nav-lewagon a {
@@ -40,6 +47,10 @@
 
 .navbar-link {
   color: white;
+}
+
+.nav-item {
+  background-color: black;
 }
 
 .fa-space-shuttle {
