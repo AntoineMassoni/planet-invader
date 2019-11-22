@@ -74,7 +74,7 @@
           <%= render 'shared/rating_stars', rating: @planet.average_rating %>
           <div id="booking-form-div" data-bookings="<%= @bookings_dates.to_json %>">
             <%= link_to 'Edit', edit_planet_path(@planet), class: 'button ml-2' %>
-            <%= link_to "Delete", planet_path(@planet), class: 'button ml-2' %>
+            <%= link_to "Delete", planet_path(@planet), method: :delete, data: {confirm:"Are you sure?"}, class: 'button ml-2' %>
           </div>
         </div>
       </div>
