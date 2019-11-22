@@ -64,7 +64,7 @@ fourth_user = User.create!(
   )
 
 UserPicture.create!(
-  remote_photo_url: 'https://vafloc02.s3.amazonaws.com/isyn/images/f703/img-2456703-f.jpg',
+  remote_photo_url: 'https://tnsmedia.imgix.net/2019/10/Vvn2tfOl-Anakin.jpg?auto=compress&fm=pjpg&ixlib=php-1.2.1&s=66ba8c666b0e120563e30f501559de06',
   user: User.last
   )
 
