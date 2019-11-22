@@ -11,7 +11,7 @@ body {
 }
 
 #popup img{
-  border: solid 10px white;
+  border: solid 10px #924cf6;
   border-radius: 5px;
 }
 
@@ -38,7 +38,9 @@ body {
 .popup__title {
   font-size: 50px;
   margin-bottom: 15px;
+  display: flex;
+  -webkit-box-pack: center;
   justify-content: center;
   color: white;
-  text-shadow: 2px 0 0 black;
+  text-shadow: 4px 0 0 black;
 }

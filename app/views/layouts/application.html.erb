@@ -17,6 +17,14 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= render 'shared/navbar' %>
+      <input type="button" onClick="displayImg()" value="Display Random Image">
+      <div id="popup" class="popup__wrapper">
+        <div class="popup__container">
+          <div id="gifs"></div>
+          <h1 class="popup__title">GOOD BYE</h1>
+          <p></p>
+        </div>
+      </div>
     <%= yield %>
     <%= render 'shared/footer' %>
     <%= javascript_include_tag 'application' %>
