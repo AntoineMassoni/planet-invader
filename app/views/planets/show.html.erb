@@ -47,40 +47,19 @@
         <div class="category bottom-separation">
           <h3>All reviews (<%= @reviews.count %>)</h3>
           <% if @reviews == [] %>
-          <p>No reviews</p>
+            <p>No reviews</p>
           <% else %>
-          <% @reviews.each do |review| %>
-          <div class="review mb-2">
-            <% user = User.find(review.user_id) %>
-            <div class="review-infos d-flex">
-              <div class="name">
-                <p><%= user.first_name %> <%= user.last_name %>'s review: </p>
-              </div>
-              <div class="rating">
-                <%= render 'shared/rating_stars', rating: review.rating %>
-              </div>
+            <div id="reviews">
+              <% @reviews.each do |review| %>
+                <%= render 'reviews/show', review: review %>
+              <% end %>
             </div>
-            <div class="review-content d-flex">
-              <div class="content">
-                <%= simple_format(review.content) %>
-              </div>
-              <div class="user-modif">
-                <%= link_to edit_review_path(review) do %>
-                <i class="fas fa-pen"></i>
-                <% end %>
-                <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
-                <i class="fas fa-trash"></i>
-                <% end %>
-              </div>
-            </div>
-          </div>
-          <% end %>
           <% end %>
         </div>
         <% if @planet.display_add_review_form(current_user) %>
         <div id="last" class="category">
           <h3>Add a review</h3>
-          <div class="form-container">
+          <div id="new_review" class="form-container">
             <%= render 'shared/review_form', planet: @planet, review: @review %>
           </div>
           <p></p>
