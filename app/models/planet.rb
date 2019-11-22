@@ -27,7 +27,8 @@ class Planet < ApplicationRecord
   end
 
   def display_add_review_form(user)
-    user.bookings.select { |booking| booking.check_out < Date.today }.map(&:planet).include?(self)
+    user.bookings.map(&:planet).include?(self)
+    # user.bookings.select { |booking| booking.check_out < Date.today }.map(&:planet).include?(self)
   end
 
   pg_search_scope :search,
