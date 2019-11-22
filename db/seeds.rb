@@ -44,7 +44,7 @@ UserPicture.create!(
 
 third_user = User.create!(
   first_name: "Obi wan",
-  last_name: "Konobi",
+  last_name: "Kenobi",
   phone_number:Faker::PhoneNumber.phone_number_with_country_code,
   email: 'ndasdasdg@email.com',
   password: 'azerty'
@@ -110,7 +110,7 @@ Planet.create!(
   capacity: 3,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
   weather: Faker::Music.chord,
-  user: first_user
+  user: second_user
 )
 
 PlanetPicture.create!(
@@ -271,7 +271,7 @@ Planet.create!(
   capacity: 2,
   stellar_coordinates: Faker::TvShows::StarTrek.location,
   weather: 'warm during winter and cold in the summer',
-  user: first_user
+  user: third_user
 )
 
 PlanetPicture.create!(
