@@ -12,7 +12,7 @@ class PlanetsController < ApplicationController
     if params[:search].present?
       @planets = policy_scope(Planet).search(params[:search])
       if @planets.size.zero?
-        @message = "Pas de résultat pour '#{params[:search]}'"
+        @message = "Sorry, no results for '#{params[:search]}'"
         @planets = policy_scope(Planet).all.order(created_at: :desc)
       else
         @planets = policy_scope(Planet).search(params[:search]).order(created_at: :desc)
