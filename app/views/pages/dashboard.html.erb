@@ -3,28 +3,15 @@
   <div class="separator">
     <div class="wrapper"></div>
   </div>
-  <div class="container-title">
-    <h2>My infos</h2>
+<!-- <div class="row">
+    <div class="container-title">
     <h2>My Planets</h2>
+    <h2>My infos</h2>
     <h2>My bookings</h2>
-  </div>
+  </div> -->
+  <!-- </div> -->
+
   <div class="row">
-    <div class="col-3 pl-1 pr-1">
-      <div class="card-product-side">
-        <div class="ml-2 ">
-          <div>
-            <h4>Hello, <%=current_user.first_name %> <%= current_user.last_name %>!</h4>
-            <p><strong>Your phone number:</strong> <%= current_user.phone_number %></p>
-            <div>
-              <p><strong>Your email:</strong> <%= current_user.email %></p>
-            </div>
-          </div>
-          <div>
-            <p>Change password</p>
-          </div>
-        </div>
-      </div>
-    </div>
     <div class="col-6 pl-1 pr-1">
       <div class="dashboard-card">
         <% current_user.planets.each do |planet| %>
@@ -59,25 +46,80 @@
         <% end %>
         <% end %>
       </div>
+      <div class=" d-flex justify-content-around ">
+        <div class="row">
+          <% current_user.planets.each do |planet| %>
+            <div class="col-xs-12 col-lg-6">
+              <%= link_to planet_path(planet) do %>
+                <div class="planet_card">
+                  <%= cl_image_tag planet.planet_pictures.first.photo %>
+                  <div class="planet_body">
+                    <div class="planet_name">
+                      <%= planet.name %>
+                    </div>
+                    <div class="planet_description">
+                      <%= simple_format(planet.description.first(150)) %>
+                    </div>
+                  </div>
 
+                  <div class="planet_infos d-flex justify-content-around">
+                    <div class="one-third">
+                      <div class="stat"><%= planet.price %>€</div>
+                      <div class="stat-value">Per day</div>
+                    </div>
+         <div class="separation-around">
+                    </div>
 
-      <div class="container">
-      <%= link_to 'add a new planet', new_planet_path, class: 'button' %>
-      </div>
+                    <div class="one-third">
+                      <div class="stat"><%= planet.capacity %></div>
+                      <div class="stat-value">Travelers</div>
+                    </div>
 
+                    <div class="separation-around">
+                    </div>
 
-    </div>
-    <div class="col-3 pl-1 pr-1">
-      <div class="card-product-side">
-        <% current_user.bookings.each do |booking| %>
-        <div class="bookings">
-          <div><strong>Visiting:</strong> <%= booking.planet.name %></div>
-          <div><strong>from:</strong> <%= booking.check_in %></div>
-          <div><strong>to:</strong> <%= booking.check_out %></div>
-          <div><strong>people:</strong> <%= booking.travelers %> travelers</div>
+                    <div class="one-third no-border">
+                      <div class="stat"><%= planet.average_rating %></div>
+                      <div class="stat-value">Rating</div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
         </div>
-        <% end %>
       </div>
     </div>
-  </div>
+
+    <div class="col-6 pl-1 pr-1">
+      <div class="dashbord-my-planets d-flex justify-content-center">
+        <h2>My bookings</h2>
+      </div>
+      <div>
+        <div class="row">
+          <% current_user.bookings.each do |booking| %>
+            <div class="col-12">
+              <%= link_to planet_path(booking.planet) do %>
+                <div class="dashboard-booking-card">
+                  <div class="d-flex">
+                    <div>
+                      <%= cl_image_tag booking.planet.planet_pictures.first.photo, class: "booking-card-img" %>
+                    </div>
+                    <div class="flex-grow-1 booking-infos">
+                      <h4 class="text-center"><%= booking.planet.name %></h4>
+                      <div class="d-flex justify-content-between">
+                      <div><strong>From:</strong> <%= booking.check_in %></div>
+                      <div><strong>To:</strong> <%= booking.check_out %></div>
+                      </div>
+                      <div><strong>People:</strong> <%= booking.travelers %> travelers</div>
+                    </div>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
 </div>
+

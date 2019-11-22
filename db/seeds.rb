@@ -24,40 +24,61 @@ first_user = User.create!(
   password: 'azerty'
   )
 
-full_name = Faker::Movies::StarWars.character
+UserPicture.create!(
+  remote_photo_url: 'https://www.journaldemickey.com/sites/default/files/dico/luke-skywalker-star-wars.jpg',
+  user: User.last
+  )
+
 second_user = User.create!(
-  first_name: full_name.split(" ")[0],
-  last_name: full_name.split(" ")[1],
+  first_name: "Mace",
+  last_name: "Windu",
   phone_number:Faker::PhoneNumber.phone_number_with_country_code,
   email: 'nothing@email.com',
   password: 'azerty'
   )
 
-full_name = Faker::Movies::StarWars.character
+UserPicture.create!(
+  remote_photo_url: 'https://vignette.wikia.nocookie.net/fr.starwars/images/f/fc/Mace_Windu.jpg/revision/latest?cb=20170702145737',
+  user: User.last
+  )
+
 third_user = User.create!(
-  first_name: full_name.split(" ")[0],
-  last_name: full_name.split(" ")[1],
+  first_name: "Obi wan",
+  last_name: "Konobi",
   phone_number:Faker::PhoneNumber.phone_number_with_country_code,
   email: 'ndasdasdg@email.com',
   password: 'azerty'
   )
 
-full_name = Faker::Movies::StarWars.character
+UserPicture.create!(
+  remote_photo_url: 'https://www.liveabout.com/thmb/pYLUnM7lQ6ef-ShHTdunHcExcw0=/768x0/filters:no_upscale():max_bytes(150000):strip_icc()/EP2-IA-60435_R_8x10-56a83bea3df78cf7729d314a.jpg',
+  user: User.last
+  )
+
 fourth_user = User.create!(
-  first_name: full_name.split(" ")[0],
-  last_name: full_name.split(" ")[1],
+  first_name: "Anakin",
+  last_name: "Skywalker",
   phone_number:Faker::PhoneNumber.phone_number_with_country_code,
   email: 'nooidsdvhsfdoiv@email.com',
   password: 'azerty'
   )
 
-full_name = Faker::Movies::StarWars.character
+UserPicture.create!(
+  remote_photo_url: 'https://tnsmedia.imgix.net/2019/10/Vvn2tfOl-Anakin.jpg?auto=compress&fm=pjpg&ixlib=php-1.2.1&s=66ba8c666b0e120563e30f501559de06',
+  user: User.last
+  )
+
 fifth_user = User.create!(
-  first_name: full_name.split(" ")[0],
-  last_name: full_name.split(" ")[1],
+  first_name: "Han",
+  last_name: "Solo",
   phone_number:Faker::PhoneNumber.phone_number_with_country_code,
   email: 'nooidsdadhgreretrtbasgsfdoiv@email.com',
   password: 'azerty'
+  )
+
+UserPicture.create!(
+  remote_photo_url: "https://fsmedia.imgix.net/9d/dd/37/4a/e284/475a/910d/8f6f5c024b51/han-solo.png?rect=15%2C0%2C1319%2C660&auto=format%2Ccompress&dpr=2&w=650",
+  user: User.last
   )
 
 Planet.create!(

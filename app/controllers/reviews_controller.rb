@@ -10,12 +10,14 @@ class ReviewsController < ApplicationController
 
   def new
     @review = Review.new
+    authorize @review
   end
 
   def create
     @review = Review.new(review_params)
     @review.planet = @planet
     @review.user = current_user
+    authorize @review
     @review.save
     redirect_to planet_path(@planet)
     if @review.save

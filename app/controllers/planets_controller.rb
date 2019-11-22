@@ -1,6 +1,6 @@
 class PlanetsController < ApplicationController
   before_action :set_planet, only: %i[show edit update destroy]
-  skip_before_action :authenticate_user!, only: :home
+  skip_before_action :authenticate_user!, only: %i[home index]
   def home
     @rating_planets = Planet.all.order(rating: :desc)
     @new_planets = Planet.all.order(created_at: :desc)
@@ -9,16 +9,17 @@ class PlanetsController < ApplicationController
   end
 
   def index
+    @planets = policy_scope(Planet)
     if params[:search].present?
       if @planets.nil?
         @message = "Pas de résultat pour '#{params[:search]}'"
-        @planets = Planet.all
+        @planets = Planet.all.order(created_at: :desc)
+      else
+        @planets = Planet.search(params[:search]).order(created_at: :desc)
       end
     else
-      @planets = Planet.all
+      @planets = Planet.all.order(created_at: :desc)
     end
-    @planets = Planet.search(params[:search])
-    @planets = policy_scope(Planet).order(created_at: :desc)
   end
 
   def show
@@ -51,6 +52,10 @@ class PlanetsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+    authorize @planet
   end
 
   def update
