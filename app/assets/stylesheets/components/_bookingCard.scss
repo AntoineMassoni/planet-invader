@@ -1,5 +1,5 @@
 .booking-card {
-  padding: 20px;
+  padding: 35px;
   background-color: white;
   border-radius: 10px;
   position: -webkit-sticky;
@@ -9,9 +9,16 @@
   border-radius: 0px;
 }
 
+.booking-card h2, .score-wrap {
+  margin: 10px;
+}
+
+#booking-form-div {
+  margin: 20px;
+}
+
 .planet-infos {
   padding: 20px;
-  border-radius: 5px;
   background-color: white;
 }
 
