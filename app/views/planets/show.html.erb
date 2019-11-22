@@ -23,16 +23,15 @@
   </a>
 </div>
 
-
 <div class="show-container">
   <div class="row">
     <div class="col-8">
       <div class="planet-infos">
         <div class="container-title-show">
-          <div class="seperator">
           <h1 id='planet-name'><%= @planet.name %></h1>
           <img class="avatar-show" src="<%= current_user.user_pictures.first.photo %>" alt="avatar-show">
         </div>
+        <hr>
         <div class="category bottom-separation">
           <h3><i class="fab fa-ethereum"></i> Price per day</h3>
           <p id="price"><%= @planet.price %></p>
@@ -46,10 +45,6 @@
           <p><%= simple_format(@planet.description) %></p>
           <p></p>
         </div>
-      <!--   <div class="category bottom-separation">
-          <h3><i class="fas fa-dice"></i> Activities:</h3>
-          <p><%= @planet.activities %></p>
-        </div> -->
         <div class="category bottom-separation">
           <h3>All reviews (<%= @reviews.count %>)</h3>
           <% if @reviews == [] %>
@@ -118,3 +113,4 @@
     </div>
   </div>
 </div>
+
