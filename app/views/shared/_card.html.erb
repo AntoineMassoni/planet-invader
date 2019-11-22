@@ -1,42 +1,36 @@
 <div class="row">
   <% @planets.each do |planet| %>
-    <div class="col-xs-12 col-md-6 col-lg-3">
-      <img class="avatar-index" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" alt="">
-      <%= link_to planet_path(planet) do %>
-        <div class="planet_card">
-          <%= cl_image_tag planet.planet_pictures.first.photo %>
-
-          <div class="planet_body">
-            <div class="planet_name"><%= planet.name %></div>
-            <div class="planet_description">
-              <%= simple_format(planet.description.first(150)) %>
-            </div>
-          </div>
-
-          <div class="planet_infos d-flex justify-content-around">
-            <div class="one-third">
-              <div class="stat"><%= planet.price %>€</div>
-              <div class="stat-value">Per day</div>
-            </div>
-
-            <div class="separation-around">
-            </div>
-
-            <div class="one-third">
-              <div class="stat"><%= planet.capacity %></div>
-              <div class="stat-value">Travelers</div>
-            </div>
-
-            <div class="separation-around">
-            </div>
-
-            <div class="one-third no-border">
-              <div class="stat"><%= planet.average_rating %></div>
-              <div class="stat-value">Rating</div>
-            </div>
-          </div>
+  <div class="col-xs-12 col-md-6 col-lg-3">
+    <%= cl_image_tag( planet.user.user_pictures.first.photo, class: "avatar-index", data: { toggle: "dropdown" } , :transformation=>[{:width=>400, :height=>400, :gravity=>"face", :radius=>"max", :crop=>"crop"},{:width=>200, :crop=>"scale"}])%>
+    <%= link_to planet_path(planet) do %>
+    <div class="planet_card">
+      <%= cl_image_tag planet.planet_pictures.first.photo %>
+      <div class="planet_body">
+        <div class="planet_name"><%= planet.name %></div>
+        <div class="planet_description">
+          <%= simple_format(planet.description.first(150)) %>
         </div>
-      <% end %>
+      </div>
+      <div class="planet_infos d-flex justify-content-around">
+        <div class="one-third">
+          <div class="stat"><%= planet.price %>€</div>
+          <div class="stat-value">Per day</div>
+        </div>
+        <div class="separation-around">
+        </div>
+        <div class="one-third">
+          <div class="stat"><%= planet.capacity %></div>
+          <div class="stat-value">Travelers</div>
+        </div>
+        <div class="separation-around">
+        </div>
+        <div class="one-third no-border">
+          <div class="stat"><%= planet.average_rating %></div>
+          <div class="stat-value">Rating</div>
+        </div>
+      </div>
     </div>
+    <% end %>
+  </div>
   <% end %>
 </div>
