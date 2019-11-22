@@ -30,7 +30,7 @@
       <div class="planet-infos">
         <div class="container-title-show">
           <h1 id='planet-name'><%= @planet.name %></h1>
-          <img class="avatar-show" src="https://kitt.lewagon.com/placeholder/users/arthur-littm" alt="avatar-show">
+          <img class="avatar-show" src="<%= current_user.user_pictures.first.photo %>" alt="avatar-show">
         </div>
         <div class="category bottom-separation">
           <h3><i class="fab fa-ethereum"></i> Price per day</h3>

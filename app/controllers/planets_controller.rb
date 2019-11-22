@@ -9,16 +9,17 @@ class PlanetsController < ApplicationController
   end
 
   def index
+    @planets = policy_scope(Planet)
     if params[:search].present?
       if @planets.nil?
         @message = "Pas de résultat pour '#{params[:search]}'"
-        @planets = Planet.all
+        @planets = Planet.all.order(created_at: :desc)
+      else
+        @planets = Planet.search(params[:search]).order(created_at: :desc)
       end
     else
-      @planets = Planet.all
+      @planets = Planet.all.order(created_at: :desc)
     end
-    @planets = Planet.search(params[:search])
-    @planets = policy_scope(Planet).order(created_at: :desc)
   end
 
   def show
