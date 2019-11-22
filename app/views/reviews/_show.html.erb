@@ -1,0 +1,26 @@
+<div class="review mb-2">
+  <% user = User.find(review.user_id) %>
+  <div class="review-infos d-flex">
+    <div class="name">
+      <p><%= user.first_name %> <%= user.last_name %>'s review: </p>
+    </div>
+    <div class="rating">
+      <%= render 'shared/rating_stars', rating: review.rating %>
+    </div>
+  </div>
+  <div id="reviews" class="review-content d-flex">
+    <div class="content">
+      <%= simple_format(review.content) %>
+    </div>
+    <div class="user-modif">
+      <% if current_user == review.user %>
+        <%= link_to edit_review_path(review) do %>
+        <i class="fas fa-pen"></i>
+        <% end %>
+        <%= link_to review_path(review), method: :delete, data: { confirm: "Are you sure?" } do %>
+        <i class="fas fa-trash"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>

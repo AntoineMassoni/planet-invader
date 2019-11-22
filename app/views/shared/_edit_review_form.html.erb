@@ -1,4 +1,4 @@
-<%= simple_form_for([planet, review], remote: true) do |f| %>
+<%= simple_form_for [planet, review] do |f| %>
   <%= f.input :rating, collection: 1..5 %>
   <%= f.input :content %>
   <%= f.submit "Add your review", class: "form-control" %>

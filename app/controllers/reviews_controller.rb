@@ -14,26 +14,32 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params)
+    @review        = Review.new(review_params)
     @review.planet = @planet
-    @review.user = current_user
+    @review.user   = current_user
     authorize @review
-    @review.save
-    redirect_to planet_path(@planet)
     if @review.save
-      flash[:alert] = "Review added"
+      respond_to do |format|
+        format.html { redirect_to planet_path(@planet) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      flash[:alert] = "Review not added"
+      respond_to do |format|
+        format.html { render 'planet/show' }
+        format.js  # <-- idem
+      end
     end
   end
 
   def edit
+    authorize @review
   end
 
   def update
-    planet = @review.planet
+    @planet = @review.planet
+    authorize @review
     if @review.update(review_params)
-      redirect_to planet_path(planet)
+      redirect_to planet_path(@planet)
     else
       render :edit
     end
@@ -41,6 +47,7 @@ class ReviewsController < ApplicationController
 
   def destroy
     planet = @review.planet
+    authorize @review
     @review.destroy
     redirect_to planet_path(planet)
   end

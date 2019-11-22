@@ -1,0 +1,20 @@
+function refreshForm(innerHTML) {
+  const newReviewForm = document.getElementById('new_review');
+  newReviewForm.innerHTML = innerHTML;
+}
+
+function addReview(reviewHTML) {
+  console.log('addReview')
+  const reviews = document.getElementById('reviews');
+  console.log(reviews)
+  console.log(reviewHTML)
+  reviews.insertAdjacentHTML('beforeend', reviewHTML);
+}
+
+<% if @review.errors.any? %>
+
+  refreshForm('<%= j render "shared/review_form", planet: @planet, review: @review %>');
+<% else %>
+  addReview('<%= j render "reviews/show", review: @review %>');
+  refreshForm('<%= j render "shared/review_form", planet: @planet, review: Review.new %>');
+<% end %>
